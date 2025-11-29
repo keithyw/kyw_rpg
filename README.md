@@ -51,3 +51,15 @@ Pydantic for schema validation later
 git clone https://github.com/keithyw/kyw_rpg.git
 cd kyw_rpg
 ```
+
+#### 2. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+#### 3. Run the Game
+
+```bash
+python main.py
+```
