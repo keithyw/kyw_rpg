@@ -1,0 +1,64 @@
+{
+  "material_properties": {
+    "steel": {
+      "tier": 2,
+      "weight": "medium",
+      "default_resistance_mod": { "slash": 0.05 }
+    },
+    "bronze": {
+      "tier": 1,
+      "weight": "heavy",
+      "default_resistance_mod": { "piercing": 0.02 }
+    },
+    "copper": {
+      "tier": 1,
+      "weight": "light",
+      "default_resistance_mod": { "mental": 0.05 }
+    },
+    "iron": {
+      "tier": 2,
+      "weight": "heavy",
+      "default_resistance_mod": { "mental": 0.1 }
+    },
+    "leather": {
+      "tier": 1,
+      "weight": "light",
+      "default_resistance_mod": { "poison": 0.05 }
+    },
+    "cloth": {
+      "tier": 0,
+      "weight": "none",
+      "default_resistance_mod": { "magic": 0.02 }
+    },
+    "obsidian": {
+      "tier": 3,
+      "weight": "medium",
+      "default_resistance_mod": { "fire": 0.05 }
+    },
+    "tungsten": {
+      "tier": 3,
+      "weight": "heavy",
+      "default_resistance_mod": { "blunt": 0.05 }
+    },
+    "titanium": {
+      "tier": 4,
+      "weight": "light",
+      "default_resistance_mod": { "slash": 0.1, "piercing": 0.1 }
+    },
+    "adamantine": {
+      "tier": 5,
+      "weight": "heavy",
+      "default_resistance_mod": { "all_physical": 0.2 }
+    },
+    "mithril": {
+      "tier": 5,
+      "weight": "light",
+      "default_resistance_mod": { "magic": 0.15, "air": 0.15 }
+    },
+    "diamond": {
+      "tier": 6,
+      "weight": "none",
+      "default_resistance_mod": { "all_elemental": 0.1 }
+    }
+  }
+}

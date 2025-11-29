@@ -1,0 +1,106 @@
+{
+  "melee_combat": {
+    "swords_proficiency": {
+      "name": "Swords Proficiency",
+      "description": "Skill with all bladed weapons: long, short, scimitar, broad, 2H, bastard, falchion, katana, ninja-to, and wakizashi.",
+      "primary_stat_key": "STR",
+      "mechanical_type": "progression",
+      "base_start_value": 0
+    },
+    "polearms_proficiency": {
+      "name": "Polearms Proficiency",
+      "description": "Skill with long reach weapons: halberds, pikes, awls, lances, spears, staves, and mauls.",
+      "primary_stat_key": "STR",
+      "mechanical_type": "progression",
+      "base_start_value": 0
+    },
+    "axes_proficiency": {
+      "name": "Axes Proficiency",
+      "description": "Skill with all axe types: battle axes, thrown axes, war axes, 2H axes, and hand axes.",
+      "primary_stat_key": "STR",
+      "mechanical_type": "progression",
+      "base_start_value": 0
+    },
+    "mace_flail_proficiency": {
+      "name": "Mace & Flail Proficiency",
+      "description": "Skill with blunt force weapons: maces, flails, war hammers, whips, and morning stars.",
+      "primary_stat_key": "STR",
+      "mechanical_type": "progression",
+      "base_start_value": 0
+    },
+    "unarmed_combat": {
+      "name": "Unarmed Combat",
+      "description": "Skill in hand-to-hand fighting, kicks, and general martial arts techniques (Monk prerequisite).",
+      "primary_stat_key": "DEX",
+      "mechanical_type": "progression",
+      "base_start_value": 10
+    },
+    "daggers_proficiency": {
+      "name": "Daggers Proficiency",
+      "description": "Skill with all small, finesse weapons: knives, daggers, and darts.",
+      "primary_stat_key": "DEX",
+      "mechanical_type": "progression",
+      "base_start_value": 0
+    }
+  },
+  "ranged_combat": {
+    "bows_proficiency": {
+      "name": "Bows Proficiency",
+      "description": "Skill with long, short, and composite bows.",
+      "primary_stat_key": "DEX",
+      "mechanical_type": "progression",
+      "base_start_value": 0
+    },
+    "crossbows_proficiency": {
+      "name": "Crossbows Proficiency",
+      "description": "Skill with light and heavy crossbows.",
+      "primary_stat_key": "DEX",
+      "mechanical_type": "progression",
+      "base_start_value": 0
+    },
+    "slings_proficiency": {
+      "name": "Slings Proficiency",
+      "description": "Skill with slings and other projectile weapons.",
+      "primary_stat_key": "DEX",
+      "mechanical_type": "progression",
+      "base_start_value": 5
+    },
+    "wands_proficiency": {
+      "name": "Wands Proficiency",
+      "description": "Skill in effectively wielding and maximizing the power of magical wands.",
+      "primary_stat_key": "INT",
+      "mechanical_type": "progression",
+      "base_start_value": 0
+    }
+  },
+  "defense_and_armor": {
+    "light_armor_proficiency": {
+      "name": "Light Armor Proficiency",
+      "description": "Reduces penalties for wearing cloth, robes, and leather armor; required for high-DEX and casting classes.",
+      "primary_stat_key": "DEX",
+      "mechanical_type": "progression",
+      "base_start_value": 0
+    },
+    "medium_armor_proficiency": {
+      "name": "Medium Armor Proficiency",
+      "description": "Reduces movement penalty and increases base protection for wearing ring mail, brigandine, and scale.",
+      "primary_stat_key": "VIT",
+      "mechanical_type": "progression",
+      "base_start_value": 0
+    },
+    "heavy_armor_proficiency": {
+      "name": "Heavy Armor Proficiency",
+      "description": "Reduces massive speed penalties and unlocks higher damage reduction bonuses for chain, splint, banded, and plate armor.",
+      "primary_stat_key": "STR",
+      "mechanical_type": "progression",
+      "base_start_value": 0
+    },
+    "shield_mastery": {
+      "name": "Shield Mastery",
+      "description": "Reduces to-hit penalties for using bucklers, medium, large, and tower shields. Unlocks advanced shield maneuvers.",
+      "primary_stat_key": "STR",
+      "mechanical_type": "progression",
+      "base_start_value": 0
+    }
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://yourgame.com/schemas/character_v1.json",
+  "title": "Saved Character Schema",
+  "description": "The schema for a serialized Character object, used for saving and loading.",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The character's name.",
+      "type": "string",
+      "minLength": 1
+    },
+    "sex": {
+      "description": "The character's chosen gender.",
+      "type": "string",
+      "enum": ["M", "F", "O"]
+    },
+    "race_key": {
+      "description": "The primary race identifier.",
+      "type": "string"
+    },
+    "sub_race_key": {
+      "description": "The sub-race identifier.",
+      "type": "string"
+    },
+    "class_key": {
+      "description": "The specific class identifier (sub_class key).",
+      "type": "string"
+    },
+    "level": {
+      "description": "Current character level.",
+      "type": "integer",
+      "minimum": 1
+    },
+    "base_attributes": {
+      "description": "Unmodified attribute scores from roll and point buy.",
+      "type": "object",
+      "minProperties": 8,
+      "patternProperties": {
+        "^(STR|INT|WIL|DEX|VIT|SPD|PER|LUK)$": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "final_attributes": {
+      "description": "Calculated final attribute scores (Base + Racial Mods + Gear Mods).",
+      "type": "object",
+      "minProperties": 8,
+      "patternProperties": {
+        "^(STR|INT|WIL|DEX|VIT|SPD|PER|LUK)$": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "skills": {
+      "description": "All skill proficiencies (percentage values).",
+      "type": "object",
+      "minProperties": 1,
+      "patternProperties": {
+        "^[a-z_]+$": { "type": "integer", "minimum": 0, "maximum": 100 }
+      }
+    },
+    "inventory": {
+      "description": "List of non-equipped items.",
+      "type": "array",
+      "items": { "type": "object" }
+    },
+    "equipment": {
+      "description": "Currently equipped gear, keyed by slot.",
+      "type": "object",
+      "minProperties": 1
+    },
+    "current_hp": {
+      "description": "Current Health Points.",
+      "type": "integer",
+      "minimum": 0
+    },
+    "max_hp": {
+      "description": "Maximum Health Points.",
+      "type": "integer",
+      "minimum": 1
+    }
+  },
+  "required": [
+    "name",
+    "sex",
+    "race_key",
+    "sub_race_key",
+    "class_key",
+    "level",
+    "base_attributes",
+    "final_attributes",
+    "skills",
+    "inventory",
+    "equipment",
+    "current_hp",
+    "max_hp"
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "non_physical_damage_types": {
+    "fire": { "name": "Fire", "elemental": true, "effect_key": "burning" },
+    "water_ice": {
+      "name": "Water/Ice",
+      "elemental": true,
+      "effect_key": "chilled"
+    },
+    "air_lightning": {
+      "name": "Air/Lightning",
+      "elemental": true,
+      "effect_key": "shocked"
+    },
+    "earth_magma": {
+      "name": "Earth/Magma",
+      "elemental": true,
+      "effect_key": "slowed"
+    },
+    "poison": {
+      "name": "Poison",
+      "elemental": false,
+      "effect_key": "poisoned"
+    },
+    "holy": { "name": "Holy", "elemental": false, "effect_key": "sanctified" },
+    "unholy": { "name": "Unholy", "elemental": false, "effect_key": "cursed" },
+    "mental_psychic": {
+      "name": "Mental/Psychic",
+      "elemental": false,
+      "effect_key": "confused"
+    },
+    "bleeding_physical": {
+      "name": "Bleeding (Physical)",
+      "elemental": false,
+      "effect_key": "bleeding"
+    }
+  },
+
+  "weapon_physical_damage_types": {
+    "striking": {
+      "description": "A focused, piercing strike (e.g., Rapier point, Spear tip, Dagger)."
+    },
+    "slash_slicing": {
+      "description": "A wide, tearing cut (e.g., Sword, Axe, Scythe)."
+    },
+    "piercing": {
+      "description": "A narrow, deep puncture (e.g., Arrow, Bolt, Dart)."
+    },
+    "blunt_crushing": {
+      "description": "Force applied over a broad area (e.g., Mace, Hammer, Flail)."
+    }
+  },
+
+  "status_effects": {
+    "burning": {
+      "type": "dot",
+      "effect": "damage over time; reduces healing received."
+    },
+    "chilled": {
+      "type": "debuff",
+      "effect": "reduces SPD and DEX; 10% chance to be frozen."
+    },
+    "shocked": {
+      "type": "debuff",
+      "effect": "reduces Initiative (SPD) and 10% chance to be stunned."
+    },
+    "slowed": {
+      "type": "debuff",
+      "effect": "reduces Movement Speed and grants AC bonus to targets."
+    },
+    "poisoned": { "type": "dot", "effect": "damage over time; reduces VIT." },
+    "sanctified": {
+      "type": "buff",
+      "effect": "small resistance to dark/unholy damage."
+    },
+    "cursed": { "type": "debuff", "effect": "reduces all resistances." },
+    "confused": {
+      "type": "debuff",
+      "effect": "target may attack randomly or pass turn."
+    },
+    "bleeding": {
+      "type": "dot",
+      "effect": "damage over time; based on target's max HP."
+    },
+    "sleep": {
+      "type": "cc",
+      "effect": "target is inactive until damaged or duration expires."
+    },
+    "paralyzed": {
+      "type": "cc",
+      "effect": "target is unable to act; physical damage vs. paralyzed targets is critical."
+    }
+  },
+
+  "damage_modifiers": {
+    "area_effect": {
+      "type": "aoe",
+      "description": "Spell affects a radius rather than a single target."
+    },
+    "damage_over_time": {
+      "type": "dot",
+      "description": "Damage is dealt in ticks over a specified duration (e.g., 3 turns)."
+    },
+    "critical_hits": {
+      "type": "multiplier",
+      "description": "Damage is multiplied based on class/skill (base x2.0)."
+    },
+    "instantaneous": {
+      "type": "base",
+      "description": "Damage is dealt immediately in one instance."
+    },
+    "multi_hit": {
+      "type": "multiplier",
+      "description": "Ability strikes the target multiple times in one action."
+    }
+  }
+}

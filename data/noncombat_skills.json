@@ -1,0 +1,222 @@
+{
+  "movement_and_survival": {
+    "scouting": {
+      "name": "Scouting",
+      "description": "Ability to notice hidden dangers, track enemies, and survey terrain.",
+      "primary_stat_key": "PER",
+      "mechanical_type": "check",
+      "base_start_value": 25
+    },
+    "tracking": {
+      "name": "Tracking",
+      "description": "Following trails and identifying the presence of creatures in the area.",
+      "primary_stat_key": "PER",
+      "mechanical_type": "check",
+      "base_start_value": 20
+    },
+    "navigation": {
+      "name": "Navigation/Pathfinding",
+      "description": "Ability to find the shortest or safest path through a known area.",
+      "primary_stat_key": "INT",
+      "mechanical_type": "utility",
+      "base_start_value": 15
+    },
+    "swimming": {
+      "name": "Swimming",
+      "description": "Ability to traverse deep water without drowning.",
+      "primary_stat_key": "VIT",
+      "mechanical_type": "boolean",
+      "base_start_value": 5
+    },
+    "climbing": {
+      "name": "Climbing",
+      "description": "Ability to ascend steep or treacherous surfaces.",
+      "primary_stat_key": "STR",
+      "mechanical_type": "check",
+      "base_start_value": 10
+    },
+    "running": {
+      "name": "Running",
+      "description": "Increases overland travel speed and reduces fatigue.",
+      "primary_stat_key": "SPD",
+      "mechanical_type": "utility",
+      "base_start_value": 10
+    },
+    "foraging": {
+      "name": "Foraging",
+      "description": "Locating edible or useful natural resources in the wilderness.",
+      "primary_stat_key": "PER",
+      "mechanical_type": "utility",
+      "base_start_value": 25
+    }
+  },
+  "crafting_and_trade": {
+    "cooking": {
+      "name": "Cooking",
+      "description": "Preparing meals that grant temporary bonuses or improved healing.",
+      "primary_stat_key": "INT",
+      "mechanical_type": "utility",
+      "base_start_value": 10
+    },
+    "weaponsmithing": {
+      "name": "Weaponsmithing",
+      "description": "Crafting and repairing metal melee weapons.",
+      "primary_stat_key": "STR",
+      "mechanical_type": "utility",
+      "base_start_value": 0
+    },
+    "bowery": {
+      "name": "Bowery",
+      "description": "Crafting and repairing bows and crossbows.",
+      "primary_stat_key": "DEX",
+      "mechanical_type": "utility",
+      "base_start_value": 0
+    },
+    "fletching": {
+      "name": "Fletching",
+      "description": "Crafting arrows and bolts for missile weapons.",
+      "primary_stat_key": "DEX",
+      "mechanical_type": "utility",
+      "base_start_value": 5
+    },
+    "armorer": {
+      "name": "Armorer",
+      "description": "Crafting and repairing metal armor.",
+      "primary_stat_key": "STR",
+      "mechanical_type": "utility",
+      "base_start_value": 0
+    },
+    "herbalism": {
+      "name": "Herbalism",
+      "description": "Gathering and identifying rare or medicinal plants.",
+      "primary_stat_key": "WIL",
+      "mechanical_type": "utility",
+      "base_start_value": 15
+    },
+    "potion_crafting": {
+      "name": "Potion Crafting",
+      "description": "Brewing alchemical potions and extracts.",
+      "primary_stat_key": "INT",
+      "mechanical_type": "utility",
+      "base_start_value": 0
+    },
+    "mining": {
+      "name": "Mining",
+      "description": "Extracting raw ore and stone from deposits.",
+      "primary_stat_key": "STR",
+      "mechanical_type": "utility",
+      "base_start_value": 10
+    },
+    "engineering": {
+      "name": "Engineering",
+      "description": "Designing and constructing complex mechanical devices or repairs.",
+      "primary_stat_key": "INT",
+      "mechanical_type": "utility",
+      "base_start_value": 5
+    },
+    "leatherworking": {
+      "name": "Leatherworking",
+      "description": "Tanning hides and crafting leather armor and goods.",
+      "primary_stat_key": "DEX",
+      "mechanical_type": "utility",
+      "base_start_value": 0
+    },
+    "jewelcrafting": {
+      "name": "Jewelcrafting",
+      "description": "Cutting gems and crafting jewelry (potentially magical).",
+      "primary_stat_key": "DEX",
+      "mechanical_type": "utility",
+      "base_start_value": 0
+    },
+    "skinning": {
+      "name": "Skinning",
+      "description": "Successfully harvesting hides and pelts from dead creatures.",
+      "primary_stat_key": "DEX",
+      "mechanical_type": "check",
+      "base_start_value": 20
+    }
+  },
+  "knowledge_and_social": {
+    "reading_writing": {
+      "name": "Reading/Writing/Scribing",
+      "description": "Literacy; fundamental to research and spell acquisition.",
+      "primary_stat_key": "INT",
+      "mechanical_type": "boolean",
+      "base_start_value": 0
+    },
+    "monster_lore": {
+      "name": "Monster Lore (Identification)",
+      "description": "Knowledge of a creature's strengths, weaknesses, and habits.",
+      "primary_stat_key": "INT",
+      "mechanical_type": "check",
+      "base_start_value": 15
+    },
+    "item_lore": {
+      "name": "Item Lore",
+      "description": "Identifying the properties of unknown items, magical or otherwise.",
+      "primary_stat_key": "INT",
+      "mechanical_type": "check",
+      "base_start_value": 15
+    },
+    "oratory": {
+      "name": "Oratory",
+      "description": "Public speaking skill for rousing crowds or giving formal speeches.",
+      "primary_stat_key": "PER",
+      "mechanical_type": "check",
+      "base_start_value": 10
+    },
+    "negotiation": {
+      "name": "Negotiation/Merchant",
+      "description": "Ability to haggle for better prices in trade.",
+      "primary_stat_key": "PER",
+      "mechanical_type": "utility",
+      "base_start_value": 15
+    }
+  },
+  "stealth_and_trickery": {
+    "trap_management": {
+      "name": "Trap Management",
+      "description": "Ability to detect, disarm, or set traps.",
+      "primary_stat_key": "DEX",
+      "mechanical_type": "check",
+      "base_start_value": 10
+    },
+    "lockpicking": {
+      "name": "Lockpicking",
+      "description": "Opening locked doors and containers without a key.",
+      "primary_stat_key": "DEX",
+      "mechanical_type": "check",
+      "base_start_value": 15
+    },
+    "pickpocketing": {
+      "name": "Pickpocketing",
+      "description": "Stealing small items from a person without being noticed.",
+      "primary_stat_key": "DEX",
+      "mechanical_type": "check",
+      "base_start_value": 5
+    },
+    "acrobatics": {
+      "name": "Acrobatics (Tumbling, Evasion)",
+      "description": "Performing complex physical maneuvers; grants evasion in combat.",
+      "primary_stat_key": "SPD",
+      "mechanical_type": "check",
+      "base_start_value": 15
+    },
+    "stealth": {
+      "name": "Stealth (Hiding in Shadows)",
+      "description": "Moving undetected and gaining advantage in combat.",
+      "primary_stat_key": "DEX",
+      "mechanical_type": "check",
+      "base_start_value": 15
+    }
+  },
+  "other": {
+    "riding_taming": {
+      "name": "Riding/Taming (Horses)",
+      "description": "Ability to ride, control, and train mounts.",
+      "primary_stat_key": "PER",
+      "mechanical_type": "utility",
+      "base_start_value": 10
+    }
+  }
+}

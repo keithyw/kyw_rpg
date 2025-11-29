@@ -1,0 +1,141 @@
+{
+  "arcane_schools": {
+    "arcane_general": {
+      "name": "Arcane Magic",
+      "primary_stat_key": "INT",
+      "damage_type": "magic",
+      "description": "General purpose scholarly magic, foundational for Mages and Wizards."
+    },
+    "illusion": {
+      "name": "Illusion",
+      "primary_stat_key": "INT",
+      "damage_type": "mental",
+      "description": "Spells of deception, phantasms, and visual/auditory trickery."
+    },
+    "enchantment": {
+      "name": "Enchantment",
+      "primary_stat_key": "INT",
+      "damage_type": "mental",
+      "description": "Magic focused on charming, mental control, and buffing/debuffing allies/enemies."
+    },
+    "conjuration": {
+      "name": "Conjuration",
+      "primary_stat_key": "INT",
+      "damage_type": "physical",
+      "description": "Bringing objects or non-living energy into existence (e.g., snowballs, magical walls)."
+    },
+    "summoning": {
+      "name": "Summoning",
+      "primary_stat_key": "WIL",
+      "damage_type": "physical",
+      "description": "Calling forth living creatures or powerful entities to aid in battle."
+    },
+    "necromancy": {
+      "name": "Necromancy",
+      "primary_stat_key": "INT",
+      "damage_type": "dark/negative",
+      "description": "Magic dealing with death, undeath, and life drain."
+    },
+    "geomancy": {
+      "name": "Geomancy",
+      "primary_stat_key": "INT",
+      "damage_type": "earth/physical",
+      "description": "Harnessing the raw, elemental power of the earth and stone."
+    },
+    "chronomancy": {
+      "name": "Chronomancy",
+      "primary_stat_key": "INT",
+      "damage_type": "magic/time",
+      "description": "Manipulation of time, speed, and aging effects."
+    },
+    "elemental_fire": {
+      "name": "Elemental Fire",
+      "primary_stat_key": "INT",
+      "damage_type": "fire",
+      "description": "Offensive and utility spells based on fire."
+    },
+    "elemental_water": {
+      "name": "Elemental Water/Ice",
+      "primary_stat_key": "INT",
+      "damage_type": "cold",
+      "description": "Offensive and utility spells based on water and ice."
+    },
+    "elemental_air": {
+      "name": "Elemental Air/Poison",
+      "primary_stat_key": "INT",
+      "damage_type": "air/poison",
+      "description": "Spells based on wind, lightning, and airborne toxins."
+    },
+    "elemental_light": {
+      "name": "Elemental Light",
+      "primary_stat_key": "WIL",
+      "damage_type": "light/fire",
+      "description": "Spells based on radiant energy and illumination."
+    },
+    "dark_magic": {
+      "name": "Dark Magic",
+      "primary_stat_key": "INT",
+      "damage_type": "dark/negative",
+      "description": "Forbidden arcane arts often associated with Warlocks and Anti-Paladins."
+    }
+  },
+  "holy_schools": {
+    "divine_general": {
+      "name": "Divine Magic",
+      "primary_stat_key": "WIL",
+      "damage_type": "divine/holy",
+      "description": "Traditional magic of the Priesthood, focused on healing, protection, and smiting."
+    },
+    "nature_general": {
+      "name": "Nature Magic",
+      "primary_stat_key": "WIL",
+      "damage_type": "nature/physical",
+      "description": "The wild, unpredictable magic of Druids and the untamed world."
+    },
+    "holy_light": {
+      "name": "Holy Light",
+      "primary_stat_key": "WIL",
+      "damage_type": "light/radiant",
+      "description": "Pure protective and offensive holy power."
+    },
+    "unholy_dark": {
+      "name": "Unholy Dark Magic",
+      "primary_stat_key": "WIL",
+      "damage_type": "dark/negative",
+      "description": "The corrupted equivalent of Divine Magic (used by Anti-Paladin)."
+    }
+  },
+  "spirit_schools": {
+    "mental_psionic": {
+      "name": "Mental/Psionic",
+      "primary_stat_key": "WIL",
+      "damage_type": "mental",
+      "description": "Magic derived from mental discipline and pure willpower (Psionics)."
+    },
+    "voodoo_ritualistic": {
+      "name": "Voodoo/Ritualistic",
+      "primary_stat_key": "PER",
+      "damage_type": "curse/poison",
+      "description": "Tribal magic focused on curses, hexes, and powerful, preparation-heavy rituals (Witch Doctor)."
+    },
+    "shamanism": {
+      "name": "Shamanism",
+      "primary_stat_key": "WIL",
+      "damage_type": "spirit/elemental",
+      "description": "Calling upon elemental and ancestral spirits for aid (Shaman)."
+    }
+  },
+
+  "spell_effect_types": [
+    "damage",
+    "healing",
+    "armor_defense",
+    "buff",
+    "debuff",
+    "create_item",
+    "destroy_item",
+    "modify_item",
+    "manipulation",
+    "summon_creature"
+  ]
+}

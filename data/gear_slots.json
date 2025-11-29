@@ -1,0 +1,26 @@
+{
+  "equipment_slots": {
+    "worn_slots": {
+      "chest": { "limit": 1, "type": ["armor", "robe"] },
+      "shoulders": { "limit": 1, "type": ["armor", "robe"] },
+      "legs": { "limit": 1, "type": ["armor", "robe"] },
+      "gloves": { "limit": 1, "type": ["armor"] },
+      "bracers": { "limit": 1, "type": ["armor", "accessory"] },
+      "helmet": { "limit": 1, "type": ["armor"] },
+      "boots": { "limit": 1, "type": ["armor"] },
+      "belt": { "limit": 1, "type": ["armor", "accessory"] },
+      "main_hand": { "limit": 1, "type": ["weapon", "shield"] },
+      "off_hand": { "limit": 1, "type": ["weapon", "shield", "accessory"] }
+    },
+    "jewelry_slots": {
+      "rings": { "limit": 10, "type": ["accessory"] },
+      "necklace": { "limit": 1, "type": ["accessory"] },
+      "earrings": { "limit": 2, "type": ["accessory"] }
+    },
+    "utility_slots": {
+      "trinket": { "limit": 2, "type": ["utility"] },
+      "relic": { "limit": 1, "type": ["utility"] },
+      "quick_slot": { "limit": 8, "type": ["consumable", "wand"] }
+    }
+  }
+}

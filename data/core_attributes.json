@@ -1,0 +1,63 @@
+{
+  "STR": {
+    "name": "Strength",
+    "description": "Physical power and striking force.",
+    "mechanics": [
+      "Primary modifier for Melee Attack Bonus and Damage.",
+      "Determines Weight Allowance (inventory capacity).",
+      "Used for physical checks like forcing doors or resisting shoves."
+    ]
+  },
+  "DEX": {
+    "name": "Dexterity",
+    "description": "Hand-eye coordination, quickness, and manual skill.",
+    "mechanics": [
+      "Primary modifier for Ranged Attack Bonus and Damage.",
+      "Contributes to Armor Class (AC) via the Dodge bonus.",
+      "Governs Thievery skills (Lockpicking, Trap Disarming)."
+    ]
+  },
+  "SPD": {
+    "name": "Speed",
+    "description": "Reaction time and overall swiftness.",
+    "mechanics": [
+      "Primary factor in Initiative (determining turn order in combat).",
+      "Determines Movement Allowance (squares/tiles per turn).",
+      "Minor contribution to Armor Class (AC)."
+    ]
+  },
+  "VIT": {
+    "name": "Vitality",
+    "description": "Hardiness, health, and resistance to physical ailments.",
+    "mechanics": [
+      "Primary modifier for Hit Point (HP) Gain upon leveling.",
+      "Provides resistance bonus against Poison and Disease."
+    ]
+  },
+  "INT": {
+    "name": "Intelligence",
+    "description": "Mental acuity, memory, and arcane knowledge.",
+    "mechanics": [
+      "Primary attribute for Arcane (Wizard/Mage) Spell Success Rate.",
+      "Determines bonus Arcane Spell Points (SP) and ability to learn complex spells."
+    ]
+  },
+  "PER": {
+    "name": "Personality",
+    "description": "Charm, persuasion, and outward social grace.",
+    "mechanics": [
+      "Governs Negotiation/Haggling (shop prices, encounter resolution).",
+      "Used for the success rate of Mind-Control Spells (as the caster).",
+      "Influences the effectiveness of social skills."
+    ]
+  },
+  "WIL": {
+    "name": "Willpower",
+    "description": "Inner mental strength, devotion, and sheer stubbornness.",
+    "mechanics": [
+      "Primary attribute for Divine (Priest/Druid) Spell Success Rate.",
+      "Determines bonus Divine Spell Points (SP).",
+      "Provides the resistance bonus for Mental Saving Throws (against charm, fear, possession)."
+    ]
+  }
+}
