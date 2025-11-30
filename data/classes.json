@@ -1,581 +1,419 @@
 {
-  "melee": {
-    "archetype_data": {
-      "base_hp_die": "d10",
-      "combat_progression": "fast",
-      "allowed_gear": ["all_armor", "all_weapons"]
+  "fighter": {
+    "base_stats": {
+      "hp": "d10",
+      "allowed_gear": ["*"],
+      "base_skills": {},
+      "base_attributes": { "STR": 9, "VIT": 9 }
     },
-    "sub_classes": {
+    "classes": {
       "fighter": {
         "name": "Fighter",
-        "description": "The versatile combat expert.",
-        "class_points_cost": 10,
-        "required_attributes": { "STR": 10, "VIT": 10 },
-        "magic_type": "none",
-        "allowed_races": [
-          "human",
-          "dwarf",
-          "elf",
-          "half_elf",
-          "half_orc",
-          "minotaur",
-          "half_giant",
-          "lizardman",
-          "canid",
-          "feline"
-        ],
-        "prohibited_dual_classes": ["necromancer", "assassin"]
-      },
-      "warrior": {
-        "name": "Warrior",
-        "description": "A primal fighter focused on physical toughness.",
-        "class_points_cost": 10,
-        "required_attributes": { "STR": 11, "VIT": 12 },
-        "magic_type": "none",
-        "allowed_races": [
-          "human",
-          "dwarf",
-          "half_orc",
-          "minotaur",
-          "half_giant",
-          "lizardman"
-        ],
-        "prohibited_dual_classes": ["mage", "wizard"]
-      },
-      "mercenary": {
-        "name": "Mercenary",
-        "description": "A fighter for hire, emphasizing speed and efficiency.",
-        "class_points_cost": 12,
-        "required_attributes": { "STR": 10, "DEX": 10 },
-        "magic_type": "none",
-        "allowed_races": ["human", "dwarf", "half_elf", "canid", "feline"],
-        "prohibited_dual_classes": ["paladin", "priest"]
-      },
-      "berserker": {
-        "name": "Berserker",
-        "description": "A savage warrior fueled by battle rage.",
-        "class_points_cost": 14,
-        "required_attributes": { "STR": 14, "VIT": 14, "WIL": 6 },
-        "magic_type": "none",
-        "allowed_races": [
-          "human",
-          "half_orc",
-          "minotaur",
-          "half_giant",
-          "goblin",
-          "kobold"
-        ],
-        "prohibited_dual_classes": ["mage", "wizard", "priest"]
+        "description": "The foundation for all physical builds, versatile in weapons and armor.",
+        "required_attributes": {},
+        "flavor_notes": "Generic base. Low skill bonuses but high HP/Attribute growth.",
+        "specializations": {
+          "warrior": {
+            "name": "Warrior",
+            "description": "Basic fighter type, focused on physical toughness and raw damage.",
+            "required_attributes": {}
+          },
+          "mercenary": {
+            "name": "Mercenary",
+            "description": "Specialist in reputation, commissions, and equipment access.",
+            "required_attributes": { "STR": 10, "PER": 12 }
+          },
+          "wizard_slayer": {
+            "name": "Wizard Slayer",
+            "description": "A specialist fighter against all spell casters, highly resistant to magic.",
+            "required_attributes": { "WIL": 14, "STR": 10 }
+          },
+          "pit_fighter": {
+            "name": "Pit Fighter",
+            "description": "Melee and unarmed oriented fighter sponsored with good starting gear.",
+            "required_attributes": { "STR": 13, "VIT": 13, "PER": 12 }
+          },
+          "bushi": {
+            "name": "Bushi",
+            "description": "A wandering fighter from the eastern lands, focused on discipline.",
+            "required_attributes": { "DEX": 10 }
+          },
+          "kensai": {
+            "name": "Kensai",
+            "description": "An armorless fighter specializing in high evasion and parrying for defense.",
+            "required_attributes": { "DEX": 15, "SPD": 15 }
+          }
+        }
       },
       "knight": {
         "name": "Knight",
-        "description": "A noble warrior skilled in defensive combat.",
-        "class_points_cost": 15,
-        "required_attributes": { "STR": 12, "PER": 12 },
-        "magic_type": "none",
-        "allowed_races": ["human", "elf", "half_elf"],
-        "prohibited_dual_classes": ["thief", "assassin"]
-      },
-      "cavalier": {
-        "name": "Cavalier",
-        "description": "A specialized knight focused on mounted combat and honor.",
-        "class_points_cost": 18,
-        "required_attributes": { "STR": 13, "PER": 14 },
-        "magic_type": "none",
-        "allowed_races": ["human", "elf"],
-        "prohibited_dual_classes": ["thief", "assassin"]
-      },
-      "paladin": {
-        "name": "Paladin",
-        "description": "A holy warrior with limited divine power.",
-        "class_points_cost": 20,
-        "required_attributes": { "STR": 12, "WIL": 14, "PER": 12 },
-        "magic_type": "divine_limited",
-        "allowed_races": ["human", "half_elf"],
-        "prohibited_dual_classes": [
-          "thief",
-          "assassin",
-          "necromancer",
-          "warlock"
-        ]
-      },
-      "crusader": {
-        "name": "Crusader",
-        "description": "A fanatical holy warrior, focused on offensive piety.",
-        "class_points_cost": 20,
-        "required_attributes": { "STR": 14, "WIL": 14 },
-        "magic_type": "divine_limited",
-        "allowed_races": ["human", "dwarf", "canid"],
-        "prohibited_dual_classes": [
-          "thief",
-          "assassin",
-          "necromancer",
-          "warlock"
-        ]
-      },
-      "valkyrie": {
-        "name": "Valkyrie",
-        "description": "A female warrior blending skill and divine power.",
-        "class_points_cost": 22,
-        "required_attributes": { "STR": 13, "WIL": 13, "VIT": 13 },
-        "magic_type": "divine_minor",
-        "allowed_races": [
-          "human",
-          "dwarf",
-          "half_elf",
-          "elf",
-          "avian",
-          "canid"
-        ],
-        "prohibited_dual_classes": ["thief", "assassin"]
-      },
-      "samurai": {
-        "name": "Samurai",
-        "description": "A disciplined warrior, master of the katana.",
-        "class_points_cost": 18,
+        "description": "Adheres to strict ethical codes; foundation for noble warriors.",
         "required_attributes": { "STR": 12, "WIL": 12 },
-        "magic_type": "none",
-        "allowed_races": ["human", "elf"],
-        "prohibited_dual_classes": ["yakuza"]
-      },
-      "bushi": {
-        "name": "Bushi",
-        "description": "A martial fighter specializing in a warrior's skills.",
-        "class_points_cost": 15,
-        "required_attributes": { "STR": 12, "DEX": 10 },
-        "magic_type": "none",
-        "allowed_races": ["human", "dwarf"],
-        "prohibited_dual_classes": ["mage", "wizard"]
-      },
-      "kensai": {
-        "name": "Kensai",
-        "description": "A master swordsman who forgoes armor for combat mastery.",
-        "class_points_cost": 25,
-        "required_attributes": { "STR": 14, "DEX": 14, "VIT": 10 },
-        "magic_type": "none",
-        "allowed_races": ["human", "feline"],
-        "prohibited_dual_classes": ["all"]
-      },
-      "monk": {
-        "name": "Monk",
-        "description": "A martial artist relying on discipline and unarmed combat.",
-        "class_points_cost": 18,
-        "required_attributes": { "STR": 12, "DEX": 12, "WIL": 12 },
-        "magic_type": "none",
-        "allowed_races": ["human", "gnome", "feline"],
-        "prohibited_dual_classes": ["berserker"]
-      },
-      "anti_paladin": {
-        "name": "Anti Paladin",
-        "description": "A fallen knight who wields dark power.",
-        "class_points_cost": 22,
-        "required_attributes": { "STR": 12, "WIL": 14, "PER": 6 },
-        "magic_type": "dark_divine_limited",
-        "allowed_races": ["human", "half_orc"],
-        "prohibited_dual_classes": ["paladin", "cleric", "priest"]
-      },
-      "death_knight": {
-        "name": "Death Knight",
-        "description": "A powerful undead champion.",
-        "class_points_cost": 30,
-        "required_attributes": { "STR": 16, "VIT": 16, "WIL": 16 },
-        "magic_type": "dark_arcane_limited",
-        "allowed_races": ["half_orc", "saurian", "minotaur"],
-        "prohibited_dual_classes": ["all_holy"]
-      }
-    }
-  },
-  "holy": {
-    "archetype_data": {
-      "base_hp_die": "d8",
-      "combat_progression": "medium",
-      "allowed_gear": ["light_armor", "medium_armor", "blunt_weapons"]
-    },
-    "sub_classes": {
-      "cleric": {
-        "name": "Cleric",
-        "description": "A healer and protector channeling divine energy.",
-        "class_points_cost": 10,
-        "required_attributes": { "WIL": 10, "PER": 10 },
-        "magic_type": "divine",
-        "allowed_races": ["human", "dwarf", "gnome", "canid"],
-        "prohibited_dual_classes": ["assassin", "necromancer"]
-      },
-      "priest": {
-        "name": "Priest",
-        "description": "A dedicated religious figure, powerful in prayer.",
-        "class_points_cost": 12,
-        "required_attributes": { "WIL": 12, "PER": 12 },
-        "magic_type": "divine",
-        "allowed_races": ["human", "elf", "canid"],
-        "prohibited_dual_classes": ["assassin", "warlock"]
-      },
-      "druid": {
-        "name": "Druid",
-        "description": "A caster focused on nature and its destructive/healing powers.",
-        "class_points_cost": 15,
-        "required_attributes": { "WIL": 14, "VIT": 10 },
-        "magic_type": "nature",
-        "allowed_races": ["human", "elf", "lizardman", "avian"],
-        "prohibited_dual_classes": ["knight", "cavalier", "mage", "wizard"]
-      },
-      "shaman": {
-        "name": "Shaman",
-        "description": "A spiritual guide who calls upon elemental spirits.",
-        "class_points_cost": 15,
-        "required_attributes": { "WIL": 14, "PER": 10 },
-        "magic_type": "spirit",
-        "allowed_races": ["half_orc", "goblin", "kobold", "lizardman"],
-        "prohibited_dual_classes": ["paladin", "knight"]
-      },
-      "witch_doctor": {
-        "name": "Witch Doctor",
-        "description": "A tribal healer and curse caster.",
-        "class_points_cost": 18,
-        "required_attributes": { "WIL": 15, "INT": 8 },
-        "magic_type": "voodoo",
-        "allowed_races": ["goblin", "kobold", "lizardman"],
-        "prohibited_dual_classes": ["paladin", "crusader"]
-      },
-      "templar": {
-        "name": "Templar",
-        "description": "A militant servant of a divine order, blending combat and faith.",
-        "class_points_cost": 15,
-        "required_attributes": { "STR": 10, "WIL": 12 },
-        "magic_type": "divine_minor",
-        "allowed_races": ["human", "dwarf"],
-        "prohibited_dual_classes": ["thief", "assassin"]
-      },
-      "sohei": {
-        "name": "Sohei",
-        "description": "A Japanese warrior monk, focused on discipline and staff weapons.",
-        "class_points_cost": 16,
-        "required_attributes": { "STR": 12, "WIL": 14 },
-        "magic_type": "none",
-        "allowed_races": ["human", "canid"],
-        "prohibited_dual_classes": ["mage", "wizard"]
-      },
-      "shukenja": {
-        "name": "Shukenja",
-        "description": "A mountain ascetic with access to elemental and nature spirits.",
-        "class_points_cost": 18,
-        "required_attributes": { "WIL": 15, "VIT": 12 },
-        "magic_type": "spirit_nature",
-        "allowed_races": ["human", "elf"],
-        "prohibited_dual_classes": ["thief", "assassin"]
-      }
-    }
-  },
-  "arcane": {
-    "archetype_data": {
-      "base_hp_die": "d4",
-      "combat_progression": "slow",
-      "allowed_gear": ["none", "staffs", "daggers"],
-      "gear_penalties": ["heavy_armor_penalty", "medium_armor_penalty"]
-    },
-    "sub_classes": {
-      "mage": {
-        "name": "Mage",
-        "description": "A generalist arcane spellcaster.",
-        "class_points_cost": 10,
-        "required_attributes": { "INT": 12 },
-        "magic_type": "arcane",
-        "allowed_races": [
-          "human",
-          "elf",
-          "half_elf",
-          "gnome",
-          "faerie",
-          "avian"
-        ],
-        "prohibited_dual_classes": ["berserker"]
-      },
-      "wizard": {
-        "name": "Wizard",
-        "description": "A scholar dedicated to the study of a specific school of magic.",
-        "class_points_cost": 12,
-        "required_attributes": { "INT": 14 },
-        "magic_type": "arcane",
-        "allowed_races": ["human", "elf", "gnome", "faerie"],
-        "prohibited_dual_classes": ["berserker"]
-      },
-      "conjurer": {
-        "name": "Conjurer",
-        "description": "Specializes in calling upon entities and objects.",
-        "class_points_cost": 15,
-        "required_attributes": { "INT": 15, "WIL": 10 },
-        "magic_type": "arcane_conjuration",
-        "allowed_races": ["human", "elf", "gnome", "saurian"],
-        "prohibited_dual_classes": ["illusionist"]
-      },
-      "summoner": {
-        "name": "Summoner",
-        "description": "Focuses on maximizing the number and power of summoned allies.",
-        "class_points_cost": 18,
-        "required_attributes": { "INT": 14, "WIL": 12 },
-        "magic_type": "arcane_summoning",
-        "allowed_races": ["human", "elf", "saurian"],
-        "prohibited_dual_classes": ["fighter", "warrior"]
-      },
-      "necromancer": {
-        "name": "Necromancer",
-        "description": "The forbidden art of death and undeath.",
-        "class_points_cost": 25,
-        "required_attributes": { "INT": 16, "WIL": 16 },
-        "magic_type": "dark_arcane",
-        "allowed_races": ["human", "drow"],
-        "prohibited_dual_classes": ["paladin", "crusader", "priest", "cleric"]
-      },
-      "warlock": {
-        "name": "Warlock",
-        "description": "A caster who gains power through pacts and raw charisma.",
-        "class_points_cost": 18,
-        "required_attributes": { "INT": 12, "PER": 12 },
-        "magic_type": "dark_arcane",
-        "allowed_races": ["human", "drow", "half_elf"],
-        "prohibited_dual_classes": ["paladin", "crusader"]
-      },
-      "archmage": {
-        "name": "Archmage",
-        "description": "A theoretical master of all arcane arts.",
-        "class_points_cost": 30,
-        "required_attributes": { "INT": 18, "WIL": 18 },
-        "magic_type": "arcane",
-        "allowed_races": ["human", "gray_elf"],
-        "prohibited_dual_classes": ["all"]
-      },
-      "geomancer": {
-        "name": "Geomancer",
-        "description": "A caster specializing in the raw power of the earth.",
-        "class_points_cost": 20,
-        "required_attributes": { "INT": 14, "VIT": 12 },
-        "magic_type": "elemental_arcane",
-        "allowed_races": ["human", "dwarf"],
-        "prohibited_dual_classes": []
-      },
-      "chronomancer": {
-        "name": "Chronomancer",
-        "description": "A master of manipulating time and fate.",
-        "class_points_cost": 30,
-        "required_attributes": { "INT": 18, "SPD": 16 },
-        "magic_type": "arcane_time",
-        "allowed_races": ["human", "gray_elf"],
-        "prohibited_dual_classes": ["all"]
-      },
-      "illusionist": {
-        "name": "Illusionist",
-        "description": "Specializes in deceptive magic and phantasms.",
-        "class_points_cost": 15,
-        "required_attributes": { "INT": 15, "DEX": 10 },
-        "magic_type": "arcane_illusion",
-        "allowed_races": ["human", "elf", "gnome", "faerie"],
-        "prohibited_dual_classes": ["conjurer"]
-      },
-      "sorcerer": {
-        "name": "Sorcerer",
-        "description": "A raw, innate magical talent, less scholarly than a wizard.",
-        "class_points_cost": 14,
-        "required_attributes": { "INT": 14, "PER": 10 },
-        "magic_type": "innate_arcane",
-        "allowed_races": ["human", "half_elf", "saurian"],
-        "prohibited_dual_classes": []
-      },
-      "magician": {
-        "name": "Magician",
-        "description": "A performer who blends minor illusion with trickery.",
-        "class_points_cost": 12,
-        "required_attributes": { "INT": 10, "PER": 14 },
-        "magic_type": "arcane_minor",
-        "allowed_races": ["human", "feline", "avian"],
-        "prohibited_dual_classes": ["cleric"]
-      },
-      "enchanters": {
-        "name": "Enchanters",
-        "description": "Masters of charming, mental control, and crafting magic items.",
-        "class_points_cost": 16,
-        "required_attributes": { "INT": 16, "PER": 12 },
-        "magic_type": "arcane_enchantment",
-        "allowed_races": ["human", "elf", "gnome"],
-        "prohibited_dual_classes": ["berserker"]
-      },
-      "alchemists": {
-        "name": "Alchemists",
-        "description": "Uses chemistry and natural science in place of raw magic.",
-        "class_points_cost": 15,
-        "required_attributes": { "INT": 14, "DEX": 10 },
-        "magic_type": "potions_bombs",
-        "allowed_races": ["human", "dwarf", "gnome"],
-        "prohibited_dual_classes": ["druid"]
-      },
-      "wu-jen": {
-        "name": "Wu-jen",
-        "description": "An Eastern elemental mage, focused on the five elements.",
-        "class_points_cost": 20,
-        "required_attributes": { "INT": 15, "WIL": 12 },
-        "magic_type": "elemental_arcane",
-        "allowed_races": ["human", "avian"],
-        "prohibited_dual_classes": []
-      }
-    }
-  },
-  "stealth": {
-    "archetype_data": {
-      "base_hp_die": "d6",
-      "combat_progression": "medium",
-      "allowed_gear": ["light_armor", "missile_weapons", "finesse_weapons"],
-      "gear_penalties": ["heavy_armor_penalty"]
-    },
-    "sub_classes": {
-      "thief": {
-        "name": "Thief",
-        "description": "A master of locks, traps, and stealth.",
-        "class_points_cost": 10,
-        "required_attributes": { "DEX": 10, "SPD": 10 },
-        "magic_type": "none",
-        "allowed_races": [
-          "human",
-          "halfling",
-          "elf",
-          "kobold",
-          "goblin",
-          "feline"
-        ],
-        "prohibited_dual_classes": ["paladin", "crusader"]
-      },
-      "assassin": {
-        "name": "Assassin",
-        "description": "Specializes in lethal sneak attacks.",
-        "class_points_cost": 20,
-        "required_attributes": { "DEX": 14, "INT": 12 },
-        "magic_type": "dark_minor",
-        "allowed_races": ["human", "drow", "feline"],
-        "prohibited_dual_classes": ["paladin", "cleric", "priest"]
-      },
-      "rogue": {
-        "name": "Rogue",
-        "description": "A versatile skilled adventurer and fighter.",
-        "class_points_cost": 12,
-        "required_attributes": { "DEX": 12, "PER": 10 },
-        "magic_type": "none",
-        "allowed_races": ["human", "half_elf", "halfling", "gnome", "feline"],
-        "prohibited_dual_classes": []
-      },
-      "brigand": {
-        "name": "Brigand",
-        "description": "A bandit focused on ambushes and intimidation.",
-        "class_points_cost": 10,
-        "required_attributes": { "DEX": 10, "STR": 10 },
-        "magic_type": "none",
-        "allowed_races": ["human", "half_orc", "goblin"],
-        "prohibited_dual_classes": ["paladin", "cleric"]
-      },
-      "cut_throat": {
-        "name": "Cut Throat",
-        "description": "A specialist in killing silently.",
-        "class_points_cost": 15,
-        "required_attributes": { "DEX": 14, "SPD": 12 },
-        "magic_type": "none",
-        "allowed_races": ["human", "kobold", "goblin"],
-        "prohibited_dual_classes": ["paladin", "cleric"]
-      },
-      "wizard_slayer": {
-        "name": "Wizard Slayer",
-        "description": "A warrior dedicated to hunting spellcasters.",
-        "class_points_cost": 22,
-        "required_attributes": { "DEX": 14, "WIL": 12 },
-        "magic_type": "none",
-        "allowed_races": ["human", "dwarf", "minotaur"],
-        "prohibited_dual_classes": ["all_magic"]
+        "flavor_notes": "Failing codes causes reversion to pure Fighter class.",
+        "specializations": {
+          "cavalier": {
+            "name": "Cavalier",
+            "description": "Noble-born knight, from high born families, typically a squire for another knight.",
+            "required_attributes": { "PER": 13, "WIL": 13 }
+          },
+          "paladin": {
+            "name": "Paladin",
+            "description": "A holy warrior adhering to a strict code of conduct.",
+            "required_attributes": { "STR": 12, "WIL": 15 }
+          },
+          "undead_hunter": {
+            "name": "Undead Hunter",
+            "description": "Specialized holy warrior dedicated solely to fighting the undead.",
+            "required_attributes": { "PER": 15, "WIL": 16 }
+          },
+          "crusader": {
+            "name": "Crusader",
+            "description": "A commissioned warrior, dedicated to a cause rather than a noble lineage.",
+            "required_attributes": { "VIT": 14, "WIL": 14 }
+          },
+          "valkyrie": {
+            "name": "Valkyrie",
+            "description": "Female warriors on a divine mission.",
+            "required_attributes": { "DEX": 14, "WIL": 14, "SPD": 14 }
+          },
+          "death_knight": {
+            "name": "Death Knight",
+            "description": "An evil knight, gaining power through unholy beliefs.",
+            "required_attributes": { "STR": 14, "WIL": 14, "VIT": 12 }
+          },
+          "samurai": {
+            "name": "Samurai",
+            "description": "Warrior specializing in Japanese armor and weapon types (Katana, Wakizashi).",
+            "required_attributes": { "STR": 12, "WIL": 13, "DEX": 10 }
+          }
+        }
       },
       "ranger": {
         "name": "Ranger",
-        "description": "A wilderness expert with limited nature magic.",
-        "class_points_cost": 15,
-        "required_attributes": { "DEX": 12, "WIL": 10, "STR": 10 },
-        "magic_type": "nature_minor",
-        "allowed_races": ["human", "elf", "lizardman"],
-        "prohibited_dual_classes": ["mage", "wizard"]
-      },
-      "hunter": {
-        "name": "Hunter",
-        "description": "Focuses on tracking and ranged combat.",
-        "class_points_cost": 12,
-        "required_attributes": { "DEX": 14, "SPD": 12 },
-        "magic_type": "none",
-        "allowed_races": ["human", "avian", "canid"],
-        "prohibited_dual_classes": ["necromancer"]
-      },
-      "archer": {
-        "name": "Archer",
-        "description": "A master of the bow, emphasizing distance combat.",
-        "class_points_cost": 15,
-        "required_attributes": { "DEX": 15, "SPD": 12 },
-        "magic_type": "none",
-        "allowed_races": ["human", "elf", "avian"],
-        "prohibited_dual_classes": ["minotaur", "half_giant"]
-      },
-      "beastmaster": {
-        "name": "Beastmaster",
-        "description": "Forms deep bonds with animals for combat support.",
-        "class_points_cost": 18,
-        "required_attributes": { "PER": 14, "WIL": 12 },
-        "magic_type": "nature_minor",
-        "allowed_races": ["human", "canid", "lizardman"],
-        "prohibited_dual_classes": ["necromancer"]
+        "description": "Tracking, scouting, and forest survival expert.",
+        "required_attributes": { "PER": 12, "DEX": 10 },
+        "flavor_notes": "Tracking, scouting, forest types.",
+        "specializations": {
+          "hunter": {
+            "name": "Hunter",
+            "description": "Ranger specialization focused on debilitating critical hits.",
+            "required_attributes": { "DEX": 13, "PER": 13 }
+          },
+          "archer": {
+            "name": "Archer",
+            "description": "Highly specialized in bows and missile weapon mastery.",
+            "required_attributes": { "DEX": 15, "PER": 15 }
+          },
+          "beastmaster": {
+            "name": "Beastmaster",
+            "description": "Ranger who uses bonded pets for combat and scouting.",
+            "required_attributes": { "WIL": 14, "PER": 10 }
+          },
+          "trapper_stalker": {
+            "name": "Trapper/Stalker",
+            "description": "Ranger focused on stealth and traps; increased combat initiative.",
+            "required_attributes": { "DEX": 13, "PER": 13 }
+          }
+        }
       },
       "barbarian": {
         "name": "Barbarian",
-        "description": "A fierce, skill-focused tribal warrior, less disciplined than a fighter.",
-        "class_points_cost": 12,
-        "required_attributes": { "STR": 14, "VIT": 12 },
-        "magic_type": "none",
-        "allowed_races": ["human", "half_orc", "minotaur"],
-        "prohibited_dual_classes": ["wizard", "illusionist"]
+        "description": "Hardy, high life warriors who eschew heavier armor for raw strength.",
+        "required_attributes": { "STR": 13, "VIT": 13 },
+        "flavor_notes": "Hardy, high life warriors who eschew heavier armor.",
+        "specializations": {
+          "nomad": {
+            "name": "Nomad",
+            "description": "Barbarian variant from cold wastelands. Wanderer. Travels in packs.",
+            "required_attributes": { "VIT": 14, "WIL": 12 }
+          },
+          "berserker": {
+            "name": "Berserker",
+            "description": "Wild warrior with low armor, but high damage absorption and attack rate.",
+            "required_attributes": { "STR": 15, "VIT": 15 }
+          }
+        }
+      }
+    }
+  },
+  "spell_casters": {
+    "base_stats": {
+      "hp": "d4",
+      "allowed_gear": ["light_armor", "simple_weapons"],
+      "base_skills": { "staff": 1, "spell_casting": 1 },
+      "base_attributes": { "INT": 12, "WIL": 10 }
+    },
+    "classes": {
+      "arcane_mage": {
+        "name": "Mages/Magic Users",
+        "description": "General spell caster, specializing in destructive arcane magic.",
+        "required_attributes": { "INT": 12, "WIL": 10 },
+        "flavor_notes": "Standard spell caster.",
+        "specializations": {
+          "mage": {
+            "name": "Mage",
+            "description": "Standard general spell caster."
+          },
+          "wujen": {
+            "name": "Wu-jen",
+            "description": "Asian spell caster with some martial arts knowledge and additional weaponry.",
+            "required_attributes": { "INT": 13, "DEX": 12 }
+          },
+          "witch": {
+            "name": "Witch",
+            "description": "Female variant with a focus on elemental or curse magic.",
+            "required_attributes": { "INT": 12, "WIL": 10 }
+          }
+        }
       },
-      "nomad": {
-        "name": "Nomad",
-        "description": "A highly mobile warrior skilled in wilderness travel.",
-        "class_points_cost": 15,
+      "summoner": {
+        "name": "Summoner",
+        "description": "Masters of conjuration, able to pull entities and objects from other planes.",
+        "required_attributes": { "INT": 14, "WIL": 14 },
+        "flavor_notes": "Create things out of thin air.",
+        "specializations": {
+          "necromancer": {
+            "name": "Necromancer",
+            "description": "Focuses on undead, death, and life drain magic.",
+            "required_attributes": { "INT": 15, "WIL": 15 }
+          },
+          "warlock": {
+            "name": "Warlock",
+            "description": "Focuses on demons and the unnatural through portal magic.",
+            "required_attributes": { "INT": 13, "WIL": 14 }
+          },
+          "conjurer": {
+            "name": "Conjurer",
+            "description": "General summoner; bring to life swords, objects or basic creatures.",
+            "required_attributes": { "INT": 14 }
+          }
+        }
+      },
+      "mental": {
+        "name": "Mental",
+        "description": "Uses deception, tricks of the mind or a '3rd eye' for psychic abilities.",
+        "required_attributes": { "WIL": 15, "INT": 13 },
+        "flavor_notes": "Uses deception, tricks of the mind or 3rd eye.",
+        "specializations": {
+          "illusionist": {
+            "name": "Illusionist",
+            "description": "Uses deception and tricks of the mind. Effects can be nullified through higher intellect.",
+            "required_attributes": { "INT": 15, "PER": 12 }
+          },
+          "psionics": {
+            "name": "Psionics",
+            "description": "Mind manipulation specialist. Defenses are WIL-based.",
+            "required_attributes": { "WIL": 16, "INT": 14 }
+          }
+        }
+      },
+      "physical": {
+        "name": "Physical",
+        "description": "A caster whose power manifests in physical, rather than purely magical, effects.",
+        "required_attributes": { "INT": 12, "VIT": 12 },
+        "flavor_notes": "Physical focus for spell effects.",
+        "specializations": {
+          "geomancer": {
+            "name": "Geomancer",
+            "description": "Physical spell caster/warrior using earth summons, buffs and dealing physical damage.",
+            "required_attributes": { "VIT": 12, "INT": 12 }
+          },
+          "alchemist": {
+            "name": "Alchemist",
+            "description": "Uses potions, thrown objects, and chemical concoctions for damage and buffs.",
+            "required_attributes": { "INT": 14, "DEX": 12 }
+          }
+        }
+      }
+    }
+  },
+  "believers": {
+    "base_stats": {
+      "hp": "d8",
+      "allowed_gear": ["medium_armor", "blunt_weapons"],
+      "base_skills": { "mace": 1, "blessed_magic": 1 },
+      "base_attributes": { "WIL": 12, "PER": 10 }
+    },
+    "classes": {
+      "cleric": {
+        "name": "Clerics",
+        "description": "Standard pious worshipper; gains divine powers through belief/deity.",
+        "required_attributes": { "WIL": 12, "PER": 10 },
+        "flavor_notes": "Believers/priests.",
+        "specializations": {
+          "priest": {
+            "name": "Priest",
+            "description": "Standard pious worshipper; gains powers through belief/deity."
+          },
+          "druid": {
+            "name": "Druid",
+            "description": "Forest priest specializing in nature and elemental magic.",
+            "required_attributes": { "WIL": 14, "INT": 10 }
+          },
+          "shapeshifter": {
+            "name": "Shapeshifter",
+            "description": "Druid specialization with the ability to manifest as woodland beings.",
+            "required_attributes": { "WIL": 15, "VIT": 12 }
+          },
+          "fanatic": {
+            "name": "Fanatic",
+            "description": "Blindly zealous type; low willpower but high pain threshold.",
+            "required_attributes": { "VIT": 14, "STR": 10, "WIL": 8 }
+          }
+        }
+      },
+      "guardian": {
+        "name": "Guardian",
+        "description": "Pious warriors who mix divine power with martial skill.",
+        "required_attributes": { "STR": 12, "WIL": 13 },
+        "flavor_notes": "Pious warriors.",
+        "specializations": {
+          "templar": {
+            "name": "Templar",
+            "description": "Beliefs provide weapon and defense infusion buffs.",
+            "required_attributes": { "STR": 12, "WIL": 13 }
+          },
+          "sohei": {
+            "name": "Sohei",
+            "description": "Protectors of temples; Asian martial arts background.",
+            "required_attributes": { "STR": 12, "WIL": 13, "DEX": 10 }
+          },
+          "monk": {
+            "name": "Monk",
+            "description": "Unarmed combat specialist who prefers peaceful approach; high evasion.",
+            "required_attributes": { "DEX": 14, "WIL": 14 }
+          }
+        }
+      },
+      "spirit": {
+        "name": "Spirit",
+        "description": "Practitioners who draw power from ancestral spirits, totems, and curses.",
+        "required_attributes": { "WIL": 14, "PER": 13 },
+        "flavor_notes": "Spirit.",
+        "specializations": {
+          "shaman": {
+            "name": "Shaman",
+            "description": "Uses totems and spirits; common among humanoid races (goblins, kobolds).",
+            "required_attributes": { "PER": 13, "WIL": 13 }
+          },
+          "witch_doctor": {
+            "name": "Witch Doctor",
+            "description": "Summoner type with chanting; humanoid creatures are inclined for this.",
+            "required_attributes": { "INT": 12, "WIL": 14 }
+          },
+          "shukenja": {
+            "name": "Shukenja",
+            "description": "Asian priest with martial arts background and weaponry; focused on purification.",
+            "required_attributes": { "WIL": 14, "DEX": 12 }
+          }
+        }
+      }
+    }
+  },
+  "underground": {
+    "base_stats": {
+      "hp": "d6",
+      "allowed_gear": ["light_armor", "finesse_weapons"],
+      "base_skills": { "dagger": 1, "leather_armor": 1 },
+      "base_attributes": { "DEX": 12, "PER": 12 }
+    },
+    "classes": {
+      "thief": {
+        "name": "Thieves",
+        "description": "The archetypal stealth class, focused on larceny, traps, and exploration.",
+        "required_attributes": { "DEX": 12, "PER": 12 },
+        "flavor_notes": "Standard thief type.",
+        "specializations": {
+          "rogue": {
+            "name": "Rogue",
+            "description": "An all-around thief, versatile in most underground skills.",
+            "required_attributes": { "DEX": 12, "PER": 12 }
+          },
+          "pickpocket": {
+            "name": "Pickpocket",
+            "description": "Specializes in kleptomania and acquiring money/items from NPCs.",
+            "required_attributes": { "DEX": 14, "SPD": 13 }
+          },
+          "beggar": {
+            "name": "Beggar",
+            "description": "Poor character with high street sense and survival skills.",
+            "required_attributes": { "PER": 14, "VIT": 10 }
+          },
+          "pirate": {
+            "name": "Pirate",
+            "description": "Navigator of the seas, skilled in ship combat and swashbuckling.",
+            "required_attributes": { "DEX": 12, "STR": 12 }
+          }
+        }
+      },
+      "assassin": {
+        "name": "Poison/Critical Hit",
+        "description": "Focuses on killing through poisons and targeting vital points for critical damage.",
+        "required_attributes": { "DEX": 15, "PER": 15 },
+        "flavor_notes": "Focuses on killing through poisons and vital points.",
+        "specializations": {
+          "assassin_spec": {
+            "name": "Assassin",
+            "description": "Poisons and critical hit specialist.",
+            "required_attributes": { "DEX": 15, "PER": 15 }
+          },
+          "ninja": {
+            "name": "Ninja",
+            "description": "Specializes in the art of ninjitsu, combining stealth, speed, and specialized weapons.",
+            "required_attributes": { "DEX": 16, "SPD": 16, "WIL": 10 }
+          }
+        }
+      },
+      "agility_fighter": {
+        "name": "Agility Fighter",
+        "description": "Less focused on thieving and more focused on finesse fighting, parrying and evasion.",
         "required_attributes": { "DEX": 14, "SPD": 14 },
-        "magic_type": "none",
-        "allowed_races": ["human", "feline", "avian"],
-        "prohibited_dual_classes": ["heavy_armor_users"]
+        "flavor_notes": "Focused on finesse fighting, parrying and evasion.",
+        "specializations": {
+          "brigand": {
+            "name": "Brigand",
+            "description": "Rough fighter type who is more of an outlaw, fights with missile weapons.",
+            "required_attributes": { "STR": 12, "DEX": 12 }
+          },
+          "swashbuckler": {
+            "name": "Swashbuckler",
+            "description": "High initiative fighter type with good parry and high evasion skills.",
+            "required_attributes": { "DEX": 14, "SPD": 14 }
+          },
+          "acrobat": {
+            "name": "Acrobat",
+            "description": "High evasion fighter that uses tumbling to counter attack.",
+            "required_attributes": { "DEX": 15, "SPD": 15 }
+          }
+        }
       },
-      "bard": {
-        "name": "Bard",
-        "description": "A jack-of-all-trades, weaving magic and music with skill.",
-        "class_points_cost": 15,
-        "required_attributes": { "DEX": 10, "INT": 10, "PER": 14 },
-        "magic_type": "arcane_limited",
-        "allowed_races": ["human", "half_elf", "faerie"],
-        "prohibited_dual_classes": ["anti_paladin"]
-      },
-      "lark": {
-        "name": "Lark",
-        "description": "A musical performer with exceptional agility and evasion.",
-        "class_points_cost": 18,
-        "required_attributes": { "DEX": 14, "SPD": 14, "PER": 12 },
-        "magic_type": "none",
-        "allowed_races": ["human", "elf", "faerie"],
-        "prohibited_dual_classes": ["heavy_armor_users"]
-      },
-      "acrobats": {
-        "name": "Acrobats",
-        "description": "A specialist in evasion, movement, and unarmed skills.",
-        "class_points_cost": 15,
-        "required_attributes": { "DEX": 15, "SPD": 15 },
-        "magic_type": "none",
-        "allowed_races": ["human", "halfling", "feline"],
-        "prohibited_dual_classes": ["minotaur", "half_giant"]
-      },
-      "yakuza": {
-        "name": "Yakuza",
-        "description": "An underworld criminal, known for intimidation and unique weapons.",
-        "class_points_cost": 18,
-        "required_attributes": { "DEX": 12, "PER": 14, "WIL": 10 },
-        "magic_type": "none",
-        "allowed_races": ["human", "drow"],
-        "prohibited_dual_classes": ["samurai", "paladin"]
+      "entertainer": {
+        "name": "Entertainer / Info",
+        "description": "Gains lore, some access to limited spells, and uses performance skills.",
+        "required_attributes": { "PER": 12, "INT": 10 },
+        "flavor_notes": "Lore, some access to limited spells.",
+        "specializations": {
+          "bard_lark": {
+            "name": "Bard/Lark",
+            "description": "Singer, uses instruments, limited fighting, evasion based.",
+            "required_attributes": { "PER": 12, "INT": 10 }
+          },
+          "juggler": {
+            "name": "Juggler",
+            "description": "High evasion, limited fighting, performs simple illusions.",
+            "required_attributes": { "DEX": 14, "PER": 14 }
+          },
+          "yakuza": {
+            "name": "Yakuza",
+            "description": "Gains money through info; limited thieving; can have targeted, offscreen assassinations.",
+            "required_attributes": { "WIL": 14, "PER": 14 }
+          },
+          "tinker": {
+            "name": "Tinker",
+            "description": "High weapon/armor lore. Better fighter with high evasion/parrying attacks.",
+            "required_attributes": { "INT": 13, "DEX": 12 }
+          }
+        }
       }
     }
   }
