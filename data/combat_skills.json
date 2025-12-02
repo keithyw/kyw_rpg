@@ -2,87 +2,201 @@
   "melee": {
     "sword": {
       "name": "Swords",
-      "description": "Long, short, scimitar, broad, 2H, bastard, falchion, katana, ninja-to, and wakizashi."
+      "description": "Long, short, scimitar, broad, 2H, bastard, falchion, katana, ninja-to, and wakizashi.",
+      "types": [
+        "long sword",
+        "short sword",
+        "scimitar",
+        "broad sword",
+        "2H sword",
+        "bastard sword",
+        "falchion",
+        "katana",
+        "ninja-to",
+        "no-dachi",
+        "sai",
+        "wakizashi"
+      ],
+      "damage_type": ["piercing", "slash_slicing"],
+      "range": "1"
     },
     "polearm": {
       "name": "Polearms",
-      "description": "Halberds, pikes, awls, lances, spears, lances and mauls."
+      "description": "Halberds, pikes, awls, lances, spears, lances and mauls.",
+      "types": [
+        "halberd",
+        "pike",
+        "awl",
+        "lance",
+        "spear",
+        "lance",
+        "maul",
+        "glaive",
+        "naginata"
+      ],
+      "damage_type": ["piercing", "slash_slicing"],
+      "range": "2"
     },
     "staff": {
       "name": "Staff",
-      "description": "Staffs and variants like martial arts versions."
+      "description": "Staffs and variants like martial arts versions.",
+      "types": ["quarterstaff", "bo staff", "three section staff"],
+      "damage_type": ["blunt_crushing"],
+      "range": "2"
     },
     "axe": {
       "name": "Axes",
-      "description": "Battle axes, thrown axes, war axes, 2H axes, and hand axes."
+      "description": "Battle axes, thrown axes, war axes, 2H axes, and hand axes.",
+      "types": ["battle axe", "thrown axe", "war axe", "2H axe", "hand axe"],
+      "damage_type": ["slash_slicing"],
+      "range": "1"
     },
     "mace_flail": {
       "name": "Mace & Flail",
-      "description": "Maces, flails, war hammers, whips, and morning stars."
+      "description": "Maces, flails, war hammers, whips, and morning stars.",
+      "types": [
+        "mace",
+        "flail",
+        "war hammer",
+        "whip",
+        "morning star",
+        "2h war hammer"
+      ],
+      "damage_type": ["blunt_crushing"],
+      "range": "1"
     },
     "unarmed": {
       "name": "Unarmed Combat",
-      "description": "Hand-to-hand fighting, kicks, and general martial arts techniques (Monk prerequisite)."
-    },
-    "thrown": {
-      "name": "Thrown Weapons",
-      "description": "darts, oil, boomerangs, grenades. Can use melee weapons to at penalty and based on strength"
+      "description": "Hand-to-hand fighting, kicks, and general martial arts techniques (Monk prerequisite).",
+      "types": ["kicks", "punches", "kung fu", "pugilism", "wrestling"],
+      "damage_type": ["blunt_crushing"],
+      "range": "1"
     },
     "dagger": {
       "name": "Daggers",
-      "description": "Knives, daggers"
+      "description": "Knives, daggers",
+      "types": ["knife", "dagger", "long dagger", "main gauche"],
+      "damage_type": ["piercing", "slash_slicing"],
+      "range": "1"
     }
   },
   "ranged": {
     "bows": {
       "name": "Bows",
-      "description": "Long, short, daikyu and composite bows."
+      "description": "Long, short, daikyu and composite bows.",
+      "types": ["long bow", "short bow", "daikyu", "composite bow"],
+      "damage_type": ["piercing"],
+      "range": "5"
     },
     "crossbows": {
       "name": "Crossbows",
-      "description": "Light and heavy crossbows."
+      "description": "Light and heavy crossbows.",
+      "types": ["light crossbow", "heavy crossbow"],
+      "damage_type": ["piercing"],
+      "range": "5"
     },
     "slings": {
       "name": "Slings",
-      "description": "Slings."
+      "description": "Slings.",
+      "types": ["slings"],
+      "damage_type": ["blunt_crushing"],
+      "range": "4"
+    },
+    "thrown": {
+      "name": "Thrown Weapons",
+      "description": "darts, oil, boomerangs, grenades. Can use melee weapons to at penalty and based on strength",
+      "types": [
+        "darts",
+        "oil",
+        "boomerangs",
+        "grenades",
+        "javelins",
+        "shuriken"
+      ],
+      "damage_type": ["piercing"],
+      "range": "3"
     },
     "wands": {
       "name": "Wands",
-      "description": "Wands and Rods."
+      "description": "Wands and Rods.",
+      "types": ["wands", "rods"],
+      "damage_type": ["magical"],
+      "range": "5"
     }
   },
-  "defense": {
+  "armor": {
     "cloth": {
       "name": "Cloth Armor",
-      "description": "Cloth and robes"
+      "description": "Cloth and robes",
+      "types": ["cloth", "robes"],
+      "defense_against": [],
+      "bonus_to": ["evasion"]
     },
     "leather": {
       "name": "Leather Armor",
-      "description": "Leather armor, studded leather, padded armor and hide armor"
+      "description": "Light leather armor types",
+      "types": ["leather", "studded leather", "padded armor", "hide armor"],
+      "defense_against": ["blunt_crushing"],
+      "bonus_to": ["evasion"]
     },
     "chain": {
       "name": "Chain Armor",
-      "description": "Ring Mail, Scale Mail and Chain Mail."
+      "description": "Moderately light metal armor",
+      "types": ["ring mail", "scale mail", "chain mail", "brigandine"],
+      "defense_against": ["slash_slicing"],
+      "bonus_to": []
     },
     "plate": {
       "name": "Plate Armor",
-      "description": "Plate armor, splint mail, banded mail, and full plate."
+      "description": "Heavier suits of armor",
+      "types": [
+        "plate armor",
+        "splint mail",
+        "banded mail",
+        "full plate",
+        "o-yori"
+      ],
+      "defense_against": ["piercing", "slash_slicing"],
+      "bonus_to": []
     },
     "shield": {
       "name": "Shield",
-      "description": "Buckler, medium shield, large shield, and tower shield."
-    },
+      "description": "Buckler, medium shield, large shield, and tower shield.",
+      "types": [
+        "buckler",
+        "medium shield",
+        "large shield",
+        "spiked shield",
+        "tower shield"
+      ],
+      "defense_against": ["piercing", "slash_slicing", "blunt_crushing"],
+      "bonus_to": ["blocking"]
+    }
+  },
+  "defense": {
     "parrying": {
       "name": "Parrying",
-      "description": "Using a weapon, a melee fighter can deflect blows"
+      "description": "Using a weapon, a melee fighter can deflect blows",
+      "types": ["parrying"],
+      "defense_against": ["piercing", "slash_slicing", "blunt_crushing"]
     },
     "evasion": {
       "name": "Evasion",
-      "description": "Dodge attacks completely."
+      "description": "Dodge attacks completely.",
+      "types": ["evasion"],
+      "defense_against": ["piercing", "slash_slicing", "blunt_crushing"]
     },
     "thickness": {
       "name": "Thickness",
-      "description": "Natural increase to life, AC and damage resistance through pain absorption techniques."
+      "description": "Natural increase to life, AC and damage resistance through pain absorption techniques.",
+      "types": ["thickness"],
+      "defense_against": ["piercing", "slash_slicing", "blunt_crushing"]
+    },
+    "blocking": {
+      "name": "Blocking",
+      "description": "Using a shield and some weapons to block attacks.",
+      "types": ["blocking"],
+      "defense_against": ["piercing", "slash_slicing", "blunt_crushing"]
     }
   }
 }

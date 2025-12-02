@@ -36,6 +36,10 @@
       "name": "Cooking",
       "description": "Preparing meals that grant temporary bonuses or improved healing."
     },
+    "first_aid": {
+      "name": "First Aid",
+      "description": "Treating injuries and illnesses."
+    },
     "herbalism": {
       "name": "Herbalism",
       "description": "Gathering and identifying rare or medicinal plants."
@@ -96,6 +100,10 @@
       "name": "Item Lore",
       "description": "Identifying the properties of unknown items, magical or otherwise."
     },
+    "musicianship": {
+      "name": "Musicianship",
+      "description": "Playing musical instruments and singing."
+    },
     "oratory": {
       "name": "Oratory",
       "description": "Improvement for spell casting and chanting."
@@ -137,10 +145,6 @@
     "pickpocketing": {
       "name": "Pickpocketing",
       "description": "Stealing small items from a person without being noticed."
-    },
-    "acrobatics": {
-      "name": "Acrobatics (Tumbling, Evasion)",
-      "description": "Performing complex physical maneuvers; grants evasion in combat."
     },
     "hiding": {
       "name": "Hiding",

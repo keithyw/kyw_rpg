@@ -1,17 +1,17 @@
 {
   "fighter": {
-    "base_stats": {
+    "core": {
       "hp": "d10",
-      "allowed_gear": ["*"],
-      "base_skills": {},
-      "base_attributes": { "STR": 9, "VIT": 9 }
+      "combat_skills": {},
+      "noncombat_skills": {},
+      "prohibited_combat_skills": ["wands"],
+      "required_attributes": { "STR": 9, "VIT": 9 }
     },
     "classes": {
       "fighter": {
         "name": "Fighter",
         "description": "The foundation for all physical builds, versatile in weapons and armor.",
         "required_attributes": {},
-        "flavor_notes": "Generic base. Low skill bonuses but high HP/Attribute growth.",
         "specializations": {
           "warrior": {
             "name": "Warrior",
@@ -41,7 +41,14 @@
           "kensai": {
             "name": "Kensai",
             "description": "An armorless fighter specializing in high evasion and parrying for defense.",
-            "required_attributes": { "DEX": 15, "SPD": 15 }
+            "required_attributes": { "DEX": 15, "SPD": 15 },
+            "prohibited_combat_skills": [
+              "ranged",
+              "leather",
+              "chain",
+              "plate",
+              "shield"
+            ]
           }
         }
       },
@@ -49,7 +56,7 @@
         "name": "Knight",
         "description": "Adheres to strict ethical codes; foundation for noble warriors.",
         "required_attributes": { "STR": 12, "WIL": 12 },
-        "flavor_notes": "Failing codes causes reversion to pure Fighter class.",
+        "prohibited_combat_skills": ["wands", "ranged"],
         "specializations": {
           "cavalier": {
             "name": "Cavalier",
@@ -92,7 +99,7 @@
         "name": "Ranger",
         "description": "Tracking, scouting, and forest survival expert.",
         "required_attributes": { "PER": 12, "DEX": 10 },
-        "flavor_notes": "Tracking, scouting, forest types.",
+        "prohibited_combat_skills": ["plate"],
         "specializations": {
           "hunter": {
             "name": "Hunter",
@@ -120,7 +127,7 @@
         "name": "Barbarian",
         "description": "Hardy, high life warriors who eschew heavier armor for raw strength.",
         "required_attributes": { "STR": 13, "VIT": 13 },
-        "flavor_notes": "Hardy, high life warriors who eschew heavier armor.",
+        "prohibited_combat_skills": ["wands", "plate"],
         "specializations": {
           "nomad": {
             "name": "Nomad",
@@ -130,6 +137,7 @@
           "berserker": {
             "name": "Berserker",
             "description": "Wild warrior with low armor, but high damage absorption and attack rate.",
+            "prohibited_combat_skills": ["ranged"],
             "required_attributes": { "STR": 15, "VIT": 15 }
           }
         }
@@ -137,18 +145,34 @@
     }
   },
   "spell_casters": {
-    "base_stats": {
+    "core": {
       "hp": "d4",
-      "allowed_gear": ["light_armor", "simple_weapons"],
-      "base_skills": { "staff": 1, "spell_casting": 1 },
-      "base_attributes": { "INT": 12, "WIL": 10 }
+      "combat_skills": {},
+      "noncombat_skills": {
+        "oratory": 1,
+        "scribe": 1
+      },
+      "prohibited_combat_skills": [
+        "sword",
+        "polearm",
+        "axe",
+        "mace_flail",
+        "bows",
+        "crossbows",
+        "leather",
+        "chain",
+        "plate",
+        "shield",
+        "evasion",
+        "thickness"
+      ],
+      "required_attributes": { "INT": 12 }
     },
     "classes": {
       "arcane_mage": {
         "name": "Mages/Magic Users",
         "description": "General spell caster, specializing in destructive arcane magic.",
         "required_attributes": { "INT": 12, "WIL": 10 },
-        "flavor_notes": "Standard spell caster.",
         "specializations": {
           "mage": {
             "name": "Mage",
@@ -170,7 +194,6 @@
         "name": "Summoner",
         "description": "Masters of conjuration, able to pull entities and objects from other planes.",
         "required_attributes": { "INT": 14, "WIL": 14 },
-        "flavor_notes": "Create things out of thin air.",
         "specializations": {
           "necromancer": {
             "name": "Necromancer",
@@ -193,7 +216,6 @@
         "name": "Mental",
         "description": "Uses deception, tricks of the mind or a '3rd eye' for psychic abilities.",
         "required_attributes": { "WIL": 15, "INT": 13 },
-        "flavor_notes": "Uses deception, tricks of the mind or 3rd eye.",
         "specializations": {
           "illusionist": {
             "name": "Illusionist",
@@ -211,7 +233,6 @@
         "name": "Physical",
         "description": "A caster whose power manifests in physical, rather than purely magical, effects.",
         "required_attributes": { "INT": 12, "VIT": 12 },
-        "flavor_notes": "Physical focus for spell effects.",
         "specializations": {
           "geomancer": {
             "name": "Geomancer",
@@ -228,18 +249,30 @@
     }
   },
   "believers": {
-    "base_stats": {
+    "core": {
       "hp": "d8",
-      "allowed_gear": ["medium_armor", "blunt_weapons"],
-      "base_skills": { "mace": 1, "blessed_magic": 1 },
-      "base_attributes": { "WIL": 12, "PER": 10 }
+      "required_attributes": { "WIL": 12, "PER": 10 },
+      "noncombat_skills": {
+        "oratory": 1
+      },
+      "prohibited_combat_skills": [
+        "sword",
+        "polearm",
+        "axe",
+        "dagger",
+        "bows",
+        "crossbows",
+        "thrown",
+        "wands",
+        "plate",
+        "evasion"
+      ]
     },
     "classes": {
       "cleric": {
         "name": "Clerics",
         "description": "Standard pious worshipper; gains divine powers through belief/deity.",
         "required_attributes": { "WIL": 12, "PER": 10 },
-        "flavor_notes": "Believers/priests.",
         "specializations": {
           "priest": {
             "name": "Priest",
@@ -266,7 +299,6 @@
         "name": "Guardian",
         "description": "Pious warriors who mix divine power with martial skill.",
         "required_attributes": { "STR": 12, "WIL": 13 },
-        "flavor_notes": "Pious warriors.",
         "specializations": {
           "templar": {
             "name": "Templar",
@@ -289,7 +321,6 @@
         "name": "Spirit",
         "description": "Practitioners who draw power from ancestral spirits, totems, and curses.",
         "required_attributes": { "WIL": 14, "PER": 13 },
-        "flavor_notes": "Spirit.",
         "specializations": {
           "shaman": {
             "name": "Shaman",
@@ -311,18 +342,31 @@
     }
   },
   "underground": {
-    "base_stats": {
+    "core": {
       "hp": "d6",
-      "allowed_gear": ["light_armor", "finesse_weapons"],
-      "base_skills": { "dagger": 1, "leather_armor": 1 },
-      "base_attributes": { "DEX": 12, "PER": 12 }
+      "required_attributes": { "DEX": 12, "PER": 12 },
+      "noncombat_skills": {
+        "disarm": 1,
+        "detect_traps": 1,
+        "lockpicking": 1,
+        "pickpocketing": 1,
+        "hiding": 1
+      },
+      "prohibited_combat_skills": [
+        "polearm",
+        "staff",
+        "mace_flail",
+        "wands",
+        "chain",
+        "plate",
+        "shield"
+      ]
     },
     "classes": {
       "thief": {
         "name": "Thieves",
         "description": "The archetypal stealth class, focused on larceny, traps, and exploration.",
         "required_attributes": { "DEX": 12, "PER": 12 },
-        "flavor_notes": "Standard thief type.",
         "specializations": {
           "rogue": {
             "name": "Rogue",
@@ -337,7 +381,8 @@
           "beggar": {
             "name": "Beggar",
             "description": "Poor character with high street sense and survival skills.",
-            "required_attributes": { "PER": 14, "VIT": 10 }
+            "required_attributes": { "PER": 14, "VIT": 10 },
+            "noncombat_skills": { "begging": 2, "haggling": 2 }
           },
           "pirate": {
             "name": "Pirate",
@@ -350,7 +395,6 @@
         "name": "Poison/Critical Hit",
         "description": "Focuses on killing through poisons and targeting vital points for critical damage.",
         "required_attributes": { "DEX": 15, "PER": 15 },
-        "flavor_notes": "Focuses on killing through poisons and vital points.",
         "specializations": {
           "assassin_spec": {
             "name": "Assassin",
@@ -368,7 +412,6 @@
         "name": "Agility Fighter",
         "description": "Less focused on thieving and more focused on finesse fighting, parrying and evasion.",
         "required_attributes": { "DEX": 14, "SPD": 14 },
-        "flavor_notes": "Focused on finesse fighting, parrying and evasion.",
         "specializations": {
           "brigand": {
             "name": "Brigand",
@@ -383,7 +426,8 @@
           "acrobat": {
             "name": "Acrobat",
             "description": "High evasion fighter that uses tumbling to counter attack.",
-            "required_attributes": { "DEX": 15, "SPD": 15 }
+            "required_attributes": { "DEX": 15, "SPD": 15 },
+            "noncombat_skills": { "tumbling": 2 }
           }
         }
       },
@@ -391,17 +435,22 @@
         "name": "Entertainer / Info",
         "description": "Gains lore, some access to limited spells, and uses performance skills.",
         "required_attributes": { "PER": 12, "INT": 10 },
-        "flavor_notes": "Lore, some access to limited spells.",
         "specializations": {
           "bard_lark": {
             "name": "Bard/Lark",
             "description": "Singer, uses instruments, limited fighting, evasion based.",
-            "required_attributes": { "PER": 12, "INT": 10 }
+            "required_attributes": { "PER": 12, "INT": 10 },
+            "noncombat_skills": {
+              "musicianship": 2,
+              "item_lore": 2,
+              "monster_lore": 2
+            }
           },
           "juggler": {
             "name": "Juggler",
             "description": "High evasion, limited fighting, performs simple illusions.",
-            "required_attributes": { "DEX": 14, "PER": 14 }
+            "required_attributes": { "DEX": 14, "PER": 14, "LUK": 12 },
+            "noncombat_skills": { "musicianship": 2 }
           },
           "yakuza": {
             "name": "Yakuza",
@@ -411,7 +460,12 @@
           "tinker": {
             "name": "Tinker",
             "description": "High weapon/armor lore. Better fighter with high evasion/parrying attacks.",
-            "required_attributes": { "INT": 13, "DEX": 12 }
+            "required_attributes": { "INT": 13, "DEX": 12 },
+            "noncombat_skills": {
+              "weaponsmithing": 2,
+              "armorer": 2,
+              "engineering": 2
+            }
           }
         }
       }

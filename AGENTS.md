@@ -65,28 +65,8 @@ limitations such as class picks.
 
 #### Classes `data/classes.json`
 
-This file contains core classes for the game. There are four archetypes with a subclass. At this stage,
-there is discussion for the notion of kits in the game. A kit would be a specialization of a subclass.
-For instance, a hunter or beastmaster would be a kit for a ranger. At this stage, we do not have
-a system for kits and probably will move some of the subclasses into kits in the future.
-
-- archetype: key one of the four archetypes containing the core data (e.g. base life) and a dictionary of subclasses.
-  - archetype_data: dict
-    - base_hp_die: HP gained per level
-    - combat_progression: Just a general description
-    - allowed_gear: List. General permitted gear. Might be more specific depending on the subclass
-  - subclasses: dict
-    - key: subclass key
-    - subclass_data: dict
-      - name: Subclass fullname
-      - description: Flavor text description of the subclass
-      - class_points_cost: For multi classed characters, this is the core cost of the class. We have this
-        point system to prevent someone from taking every subclass as a multiclass character. Also, this
-        point system will have diminishing returns such as experience point required to level up.
-      - required_attributes: Dict. Attributes required to take this class.
-      - magic_type: String. The allowed schools of magic for this class. Refer to spell_schools.json for valid values.
-      - allowed_races: List. Races/Subraces that can take this class.
-      - prohibited_dual_classes: List. Classes that cannot be dual classed with this class. This value also will be used for multi-class limitations. For instance, we should not allow a Barbarian/Paladin
+This file contains core classes for the game. Refer to docs/CHARACTER_CLASSES.md for more information on the structure
+of the file.
 
 #### Non-Combat Skills `data/noncombat_skills.json`
 

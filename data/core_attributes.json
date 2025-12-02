@@ -59,5 +59,13 @@
       "Determines bonus Divine Spell Points (SP).",
       "Provides the resistance bonus for Mental Saving Throws (against charm, fear, possession)."
     ]
+  },
+  "LUK": {
+    "name": "Luck",
+    "description": "Good fortune, bad luck, and chance events.",
+    "mechanics": [
+      "Governs the success rate of Luck-based skills (as the caster).",
+      "Influences the effectiveness of Luck-based skills."
+    ]
   }
 }

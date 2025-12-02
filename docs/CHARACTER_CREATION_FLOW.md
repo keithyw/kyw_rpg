@@ -11,7 +11,9 @@ character option. A new interface will be displayed containing a character sheet
 - Roll for stats (base random number for each stat + race/subrace modifiers as well as class minimums)
 - Bonus roll for points to distribute/customize their attributes further
 - Add/Modify skills (some skills will be innate based on race/subrace/class/subclass). Classes and races
-  will determine what available skills a character can choose from. We will need to determine a starting number of skill points that can be distributed.
+  will determine what available skills a character can choose from. We will need to determine a starting number of skill points that can be distributed. See Skill Section
+  for details on how a character can choose skills or be
+  automatically granted them on start.
 - Choose a portrait. At this stage, there are no portraits but assume that these are simple sprites or
   other image files. Gender, Race and Class will determine the available portraits.
 - Naming the character
@@ -51,3 +53,34 @@ Once the player confirms saving a new character, the character will be saved to 
 - There should be one additional roll for multiclassing. However, that system needs to be fleshed out further before figuring out what this number will be. The idea will be similar to the old Wizard's Crown
   game where one of the stats can determine the number of classes a character can multiclass into. But some
   subclasses will have higher number of points to prevent overly powerful single characters.
+
+### Skills Screen
+
+After selecting the character class and assigning
+attributes, the player will be taken to the skills screen.
+There are two types of skills: combat and noncombat. The
+list of available skills are derived from the combat_skills.json and noncombat_skills.json files.
+
+At this time, the races.json file needs to be updated
+to show which skills can be used. But for the classes.json
+file, the way the combat and noncombat skills are made
+available to a character is through an inheritance mechanism.
+
+At the broadest level, the archetype contains the
+base skills for subclasses. The "prohibited_combat_skills"
+array will deduct the available combat skills. Classes
+and specializations will inherit the skills and noncombat
+skills from the archetype but can override those values.
+For instance, the fighter archetype allows all combat
+skills except wands. But a kensai specializtaion, lists
+ranged, leather, chain, plate and shield as prohibited
+which prevents the class from using most armor.
+
+When a user enters the skills screen, they should see
+the list of available skills as well as points assigned
+to those skills. There might be default skills from the
+class, race with a default amount of points assigned.
+The base number of points that a player can spend
+at this stage is 5 for combat and 5 for noncombat skills.
+Default skills will not deduct from the starting point
+value and be treated as a bonus.

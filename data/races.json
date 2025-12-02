@@ -1,7 +1,7 @@
 {
   "human": {
     "name": "Human",
-    "description": "The versatile race, quick to learn but lacking specialization.",
+    "description": "The versatile race, quick to learn but lacking specialization. They possess a balanced spread of attributes.",
     "sub_races": {
       "default": {
         "name": "Default Human",
@@ -12,7 +12,8 @@
           "VIT": 9,
           "INT": 9,
           "PER": 9,
-          "WIL": 9
+          "WIL": 9,
+          "LUK": 9
         },
         "class_limits": [],
         "hp_mod": 0,
@@ -25,424 +26,207 @@
   },
   "dwarf": {
     "name": "Dwarf",
-    "description": "Stout, resilient, and master craftspeople.",
+    "description": "Stout, resilient, and master craftspeople. They excel in Strength and Vitality but are typically slower.",
     "sub_races": {
       "hill": {
         "name": "Hill Dwarf",
         "base_minimums": {
           "STR": 13,
           "DEX": 8,
-          "SPD": 8,
+          "SPD": 7,
           "VIT": 13,
           "INT": 7,
           "PER": 7,
-          "WIL": 7
+          "WIL": 10,
+          "LUK": 7
         },
         "class_limits": [],
         "hp_mod": 0,
-        "resistances": {},
-        "skill_bonuses": {},
-        "innate_abilities": ["adaptability_skill"],
+        "resistances": { "poison": 15 },
+        "skill_bonuses": { "tinkering": 1 },
+        "innate_abilities": ["dark_vision"],
         "equipment_bonuses": {}
       },
       "mountain": {
         "name": "Mountain Dwarf",
         "base_minimums": {
-          "STR": 13,
+          "STR": 14,
           "DEX": 7,
           "SPD": 7,
-          "VIT": 13,
-          "INT": 7,
-          "PER": 4,
-          "WIL": 12
+          "VIT": 14,
+          "INT": 6,
+          "PER": 6,
+          "WIL": 9,
+          "LUK": 9
         },
-        "class_limits": ["mage", "faerie_class"],
-        "hp_mod": 5,
-        "resistances": { "poison": 15, "disease": 5 },
-        "skill_bonuses": { "axe_mastery": 1, "hammer_mastery": 1 },
-        "innate_abilities": ["infravision_ability"],
-        "equipment_bonuses": { "heavy_armor": 1, "polearm": -1 }
-      },
-      "dark": {
-        "name": "Dark Dwarf",
-        "description": "Adjusted to be a stealthy, but physically weaker variant.",
-        "base_minimums": {
-          "STR": 9,
-          "DEX": 6,
-          "SPD": 4,
-          "VIT": 9,
-          "INT": 15,
-          "PER": 13,
-          "WIL": 7
-        },
-        "class_limits": ["priest"],
-        "hp_mod": 1.1,
-        "resistances": { "magic": 5 },
-        "skill_bonuses": { "stealth": 1 },
-        "innate_abilities": ["infravision_ability", "psionic_resistance"],
+        "class_limits": [],
+        "hp_mod": 0.5,
+        "resistances": { "cold": 10 },
+        "skill_bonuses": { "armor_lore": 1 },
+        "innate_abilities": ["dark_vision", "stone_cunning"],
         "equipment_bonuses": {}
       }
     }
   },
   "elf": {
     "name": "Elf",
-    "description": "Graceful, long-lived, and often magically inclined.",
+    "description": "Graceful and long-lived, elves are known for their high Dexterity, Speed, and connection to nature.",
     "sub_races": {
-      "gray": {
-        "name": "Gray Elf",
+      "high": {
+        "name": "High Elf",
         "base_minimums": {
-          "STR": 5,
-          "DEX": 11,
-          "SPD": 9,
-          "VIT": 5,
-          "INT": 13,
-          "PER": 12,
-          "WIL": 8
+          "STR": 7,
+          "DEX": 12,
+          "SPD": 12,
+          "VIT": 8,
+          "INT": 12,
+          "PER": 9,
+          "WIL": 8,
+          "LUK": 8
         },
         "class_limits": ["barbarian"],
-        "hp_mod": 0.9,
-        "resistances": { "charm": 10 },
-        "skill_bonuses": { "arcane_magic": 1 },
-        "innate_abilities": ["sleep_immunity"],
-        "equipment_bonuses": { "long_sword": 1, "long_bow": 1 }
-      },
-      "gold": {
-        "name": "Gold Elf",
-        "base_minimums": {
-          "STR": 5,
-          "DEX": 13,
-          "SPD": 11,
-          "VIT": 7,
-          "INT": 13,
-          "PER": 8,
-          "WIL": 6
-        },
-        "class_limits": ["barbarian"],
-        "hp_mod": 0,
-        "resistances": { "charm": 10 },
-        "skill_bonuses": { "arcane_magic": 1 },
-        "innate_abilities": ["sleep_immunity"],
-        "equipment_bonuses": { "long_sword": 1, "long_bow": 1 }
+        "hp_mod": -0.5,
+        "resistances": { "sleep": 100 },
+        "skill_bonuses": { "magic_lore": 2 },
+        "innate_abilities": ["low_light_vision"],
+        "equipment_bonuses": {}
       },
       "wood": {
         "name": "Wood Elf",
         "base_minimums": {
-          "STR": 6,
-          "DEX": 10,
-          "SPD": 10,
-          "VIT": 6,
-          "INT": 6,
-          "PER": 15,
-          "WIL": 10
-        },
-        "class_limits": ["paladin"],
-        "hp_mod": 1.0,
-        "resistances": { "poison": 5 },
-        "skill_bonuses": { "stealth": 2, "survival": 1 },
-        "innate_abilities": ["woodland_sight"],
-        "equipment_bonuses": { "light_armor": 1 }
-      },
-      "dark_elf": {
-        "name": "Dark Elf",
-        "base_minimums": {
-          "STR": 7,
-          "DEX": 11,
-          "SPD": 8,
-          "VIT": 6,
-          "INT": 10,
+          "STR": 8,
+          "DEX": 13,
+          "SPD": 13,
+          "VIT": 9,
+          "INT": 7,
           "PER": 11,
-          "WIL": 10
+          "WIL": 8,
+          "LUK": 7
         },
-        "class_limits": ["paladin"],
-        "hp_mod": 0.95,
-        "resistances": { "magic": 10 },
-        "skill_bonuses": { "shadow_magic": 1 },
-        "innate_abilities": ["dark_vision", "minor_darkness_spell"],
-        "equipment_bonuses": { "chain_mail": -1 }
+        "class_limits": ["knight", "paladin"],
+        "hp_mod": 0,
+        "resistances": {},
+        "skill_bonuses": { "tracking": 2, "stealth": 2 },
+        "innate_abilities": ["low_light_vision"],
+        "equipment_bonuses": {}
       }
     }
   },
   "half_elf": {
     "name": "Half-Elf",
-    "description": "A mix of human versatility and elven grace.",
+    "description": "Possessing the adaptability of humans and the grace of elves, they are natural diplomats.",
     "sub_races": {
       "default": {
         "name": "Default Half-Elf",
         "base_minimums": {
-          "STR": 7,
-          "DEX": 8,
-          "SPD": 8,
-          "VIT": 8,
+          "STR": 8,
+          "DEX": 10,
+          "SPD": 10,
+          "VIT": 9,
           "INT": 10,
-          "PER": 10,
-          "WIL": 12
+          "PER": 11,
+          "WIL": 9,
+          "LUK": 7
         },
         "class_limits": [],
-        "hp_mod": 1.0,
-        "resistances": { "charm": 5 },
-        "skill_bonuses": {},
-        "innate_abilities": [],
+        "hp_mod": 0,
+        "resistances": {},
+        "skill_bonuses": { "haggling": 1 },
+        "innate_abilities": ["low_light_vision"],
         "equipment_bonuses": {}
-      }
-    }
-  },
-  "halfling": {
-    "name": "Hobbit/Halfling",
-    "description": "Small, quick, and remarkably lucky.",
-    "sub_races": {
-      "default": {
-        "name": "Halfling",
-        "base_minimums": {
-          "STR": 5,
-          "DEX": 12,
-          "SPD": 12,
-          "VIT": 7,
-          "INT": 6,
-          "PER": 11,
-          "WIL": 10
-        },
-        "class_limits": ["heavy_knight"],
-        "hp_mod": 1.0,
-        "resistances": { "fear": 10 },
-        "skill_bonuses": { "throwing_weapons": 2, "stealth": 1 },
-        "innate_abilities": ["natural_luck_roll"],
-        "equipment_bonuses": { "polearm": -2, "heavy_armor": -1 }
       }
     }
   },
   "half_orc": {
     "name": "Half-Orc",
-    "description": "Brutish strength, often short-tempered.",
+    "description": "Strong and physically imposing, though often judged for their parentage. High Strength and Vitality.",
     "sub_races": {
       "default": {
         "name": "Default Half-Orc",
         "base_minimums": {
           "STR": 14,
-          "DEX": 7,
-          "SPD": 7,
-          "VIT": 13,
-          "INT": 6,
-          "PER": 6,
-          "WIL": 10
-        },
-        "class_limits": ["paladin", "priest"],
-        "hp_mod": 1.2,
-        "resistances": { "pain": 5 },
-        "skill_bonuses": { "unarmed_combat": 1 },
-        "innate_abilities": ["furious_rage"],
-        "equipment_bonuses": {}
-      }
-    }
-  },
-  "gnome": {
-    "name": "Gnome",
-    "description": "Small, cunning, and magically inclined towards illusion and craft.",
-    "sub_races": {
-      "default": {
-        "name": "Default Gnome",
-        "base_minimums": {
-          "STR": 5,
-          "DEX": 9,
+          "DEX": 8,
           "SPD": 8,
-          "VIT": 7,
-          "INT": 13,
-          "PER": 12,
-          "WIL": 9
-        },
-        "class_limits": ["large_weapon_fighter"],
-        "hp_mod": 0.95,
-        "resistances": { "illusion": 15 },
-        "skill_bonuses": { "crafting": 2, "alchemy": 1 },
-        "innate_abilities": ["minor_illusion_spell"],
-        "equipment_bonuses": {}
-      }
-    }
-  },
-  "minotaur": {
-    "name": "Minotaur",
-    "description": "Massive, powerful, and driven by primal instincts.",
-    "sub_races": {
-      "default": {
-        "name": "Minotaur",
-        "base_minimums": {
-          "STR": 15,
-          "DEX": 5,
-          "SPD": 7,
-          "VIT": 15,
-          "INT": 5,
-          "PER": 5,
-          "WIL": 11
-        },
-        "class_limits": ["all_magic"],
-        "hp_mod": 1.3,
-        "resistances": {},
-        "skill_bonuses": { "unarmed_combat": 2 },
-        "innate_abilities": ["natural_gore_attack"],
-        "equipment_bonuses": { "helm": -1, "shield": -1 }
-      }
-    }
-  },
-  "half_giant": {
-    "name": "Half-Giant",
-    "description": "Towering size and unrivaled physical might.",
-    "sub_races": {
-      "default": {
-        "name": "Half-Giant",
-        "base_minimums": {
-          "STR": 17,
-          "DEX": 5,
-          "SPD": 5,
-          "VIT": 15,
-          "INT": 6,
-          "PER": 6,
-          "WIL": 9
-        },
-        "class_limits": ["all_magic"],
-        "hp_mod": 1.4,
-        "resistances": { "crushing": 10 },
-        "skill_bonuses": { "throwing_weapons": 1 },
-        "innate_abilities": ["massive_carry_capacity"],
-        "equipment_bonuses": { "two_handed_weapons": 1 }
-      }
-    }
-  },
-  "saurian": {
-    "name": "Saurian (Reptilian Humanoid)",
-    "description": "Scaled humanoids with natural resistance and adaptive traits.",
-    "sub_races": {
-      "default": {
-        "name": "Default Saurian",
-        "base_minimums": {
-          "STR": 10,
-          "DEX": 7,
-          "SPD": 9,
           "VIT": 12,
           "INT": 7,
-          "PER": 8,
-          "WIL": 10
+          "PER": 7,
+          "WIL": 10,
+          "LUK": 6
         },
-        "class_limits": [],
-        "hp_mod": 1.1,
-        "resistances": { "fire": 5, "cold": 5 },
-        "skill_bonuses": { "survival": 1 },
-        "innate_abilities": [
-          "fire_breath_weapon_ability",
-          "natural_scales_armor"
-        ],
+        "class_limits": ["cleric", "paladin"],
+        "hp_mod": 1.5,
+        "resistances": { "unholy": 10 },
+        "skill_bonuses": { "intimidation": 2 },
+        "innate_abilities": ["ferocity"],
+        "equipment_bonuses": {}
+      }
+    }
+  },
+  "halfling": {
+    "name": "Halfling",
+    "description": "Small, nimble, and surprisingly lucky. Excellent thieves and cooks.",
+    "sub_races": {
+      "stout": {
+        "name": "Stout Halfling",
+        "base_minimums": {
+          "STR": 6,
+          "DEX": 14,
+          "SPD": 14,
+          "VIT": 9,
+          "INT": 7,
+          "PER": 10,
+          "WIL": 7,
+          "LUK": 15
+        },
+        "class_limits": ["heavy_armor_user"],
+        "hp_mod": 0,
+        "resistances": { "poison": 5 },
+        "skill_bonuses": { "pickpocketing": 2, "stealth": 2 },
+        "innate_abilities": ["small_size", "remarkable_luck"],
         "equipment_bonuses": {}
       }
     }
   },
   "lizardman": {
     "name": "Lizardman",
-    "description": "Cold-blooded and tough, adapted for wilderness survival.",
+    "description": "Amphibious, cold-blooded humanoids with natural armor and a focus on survival.",
     "sub_races": {
       "default": {
-        "name": "Lizardman",
+        "name": "Default Lizardman",
         "base_minimums": {
-          "STR": 11,
+          "STR": 12,
           "DEX": 9,
-          "SPD": 9,
+          "SPD": 8,
           "VIT": 13,
-          "INT": 4,
-          "PER": 4,
-          "WIL": 13
-        },
-        "class_limits": ["courtly_classes"],
-        "hp_mod": 1.15,
-        "resistances": { "poison": 5, "cold": 5 },
-        "skill_bonuses": { "swimming": 2, "survival": 1 },
-        "innate_abilities": ["natural_scales_armor"],
-        "equipment_bonuses": {}
-      }
-    }
-  },
-  "goblin": {
-    "name": "Goblin",
-    "description": "Small, numerous, cowardly, but surprisingly quick and dexterous.",
-    "sub_races": {
-      "default": {
-        "name": "Goblin",
-        "base_minimums": {
-          "STR": 6,
-          "DEX": 13,
-          "SPD": 12,
-          "VIT": 6,
           "INT": 7,
           "PER": 7,
-          "WIL": 12
+          "WIL": 8,
+          "LUK": 8
         },
-        "class_limits": ["paladin"],
-        "hp_mod": 0.8,
-        "resistances": { "fear": -5 },
-        "skill_bonuses": { "stealth": 2 },
-        "innate_abilities": ["dark_vision"],
+        "class_limits": ["arcane_mage"],
+        "hp_mod": 1.0,
+        "resistances": { "cold": -15, "fire": 15 },
+        "skill_bonuses": { "swimming": 2, "foraging": 2 },
+        "innate_abilities": ["natural_armor", "amphibious"],
         "equipment_bonuses": {}
-      }
-    }
-  },
-  "kobold": {
-    "name": "Kobold",
-    "description": "Tiny, trapsmithing humanoids known for pack tactics.",
-    "sub_races": {
-      "default": {
-        "name": "Kobold",
-        "base_minimums": {
-          "STR": 5,
-          "DEX": 13,
-          "SPD": 13,
-          "VIT": 5,
-          "INT": 8,
-          "PER": 7,
-          "WIL": 12
-        },
-        "class_limits": ["large_weapon_fighter"],
-        "hp_mod": 0.75,
-        "resistances": { "trap_damage": 10 },
-        "skill_bonuses": { "trap_disarming": 2 },
-        "innate_abilities": ["dark_vision"],
-        "equipment_bonuses": { "large_shield": -1, "large_weapon": -2 }
       }
     }
   },
   "faerie": {
     "name": "Faerie",
-    "description": "Winged, magical, and fragile.",
+    "description": "Small, whimsical, and magical beings, strong in magic but physically weak.",
     "sub_races": {
       "default": {
-        "name": "Faerie",
+        "name": "Default Faerie",
         "base_minimums": {
-          "STR": 4,
-          "DEX": 13,
+          "STR": 5,
+          "DEX": 10,
           "SPD": 12,
-          "VIT": 4,
-          "INT": 12,
-          "PER": 9,
-          "WIL": 9
-        },
-        "class_limits": ["all_melee_classes"],
-        "hp_mod": 0.6,
-        "resistances": { "magic": 15 },
-        "skill_bonuses": { "flying": 5 },
-        "innate_abilities": ["natural_flight", "minor_faerie_fire"],
-        "equipment_bonuses": { "any_armor": -2 }
-      }
-    }
-  },
-  "avian": {
-    "name": "Avian (Bird Folk)",
-    "description": "Bird-like humanoids, generally keen-sighted and fast.",
-    "sub_races": {
-      "default": {
-        "name": "Avian",
-        "base_minimums": {
-          "STR": 6,
-          "DEX": 12,
-          "SPD": 14,
           "VIT": 6,
-          "INT": 7,
-          "PER": 10,
-          "WIL": 8
+          "INT": 14,
+          "PER": 12,
+          "WIL": 10,
+          "LUK": 13
         },
         "class_limits": ["heavy_armor_user"],
         "hp_mod": 0.9,
@@ -455,18 +239,19 @@
   },
   "feline": {
     "name": "Feline (Cat People)",
-    "description": "Agile, stealthy, and possessed of great feline reflexes.",
+    "description": "Agile, stealthy, and possessed of great feline reflexes. High Dexterity and Speed.",
     "sub_races": {
       "default": {
         "name": "Default Feline",
         "base_minimums": {
-          "STR": 7,
-          "DEX": 13,
-          "SPD": 11,
+          "STR": 5,
+          "DEX": 12,
+          "SPD": 12,
           "VIT": 7,
-          "INT": 8,
+          "INT": 7,
           "PER": 10,
-          "WIL": 7
+          "WIL": 6,
+          "LUK": 13
         },
         "class_limits": [],
         "hp_mod": 1.0,
@@ -479,25 +264,51 @@
   },
   "canid": {
     "name": "Canid (Dog People)",
-    "description": "Loyal, steadfast, and known for their devotion and tracking skills.",
+    "description": "Loyal, steadfast, and known for their devotion and tracking skills. High Vitality and Willpower.",
     "sub_races": {
       "default": {
         "name": "Default Canid",
         "base_minimums": {
-          "STR": 9,
+          "STR": 10,
           "DEX": 7,
           "SPD": 8,
-          "VIT": 10,
+          "VIT": 12,
           "INT": 7,
-          "PER": 11,
-          "WIL": 11
+          "PER": 10,
+          "WIL": 10,
+          "LUK": 7
         },
-        "class_limits": ["thief"],
-        "hp_mod": 1.1,
-        "resistances": { "fear": 5 },
-        "skill_bonuses": { "tracking": 3 },
-        "innate_abilities": ["keen_smell"],
+        "class_limits": [],
+        "hp_mod": 1.0,
+        "resistances": { "disease": 10 },
+        "skill_bonuses": { "tracking": 2 },
+        "innate_abilities": ["superior_smell"],
         "equipment_bonuses": {}
+      }
+    }
+  },
+  "minotaur": {
+    "name": "Minotaur",
+    "description": "Massive, immensely strong humanoids often found in labyrinths or mountains. Highest Strength and Vitality.",
+    "sub_races": {
+      "default": {
+        "name": "Default Minotaur",
+        "base_minimums": {
+          "STR": 16,
+          "DEX": 5,
+          "SPD": 5,
+          "VIT": 15,
+          "INT": 6,
+          "PER": 7,
+          "WIL": 10,
+          "LUK": 8
+        },
+        "class_limits": ["thief", "assassin", "faerie"],
+        "hp_mod": 2.0,
+        "resistances": { "blunt_crushing": 10 },
+        "skill_bonuses": { "unarmed_combat": 2 },
+        "innate_abilities": ["natural_horns"],
+        "equipment_bonuses": { "medium_armor": -1 }
       }
     }
   }
